@@ -234,6 +234,28 @@ An open-source metadata catalog for data lakehouses that supports the Apache Ice
 
 ---
 
+# Apache Spark
+URL: https://dataaiwiki.netlify.app/wiki/apache-spark/
+Description: Apache Spark is a popular opensource, distributed generalpurpose clustercomputing framework. It provides a unified engine for largescale data processing, sup...
+
+Apache Spark is a popular open-source, distributed general-purpose cluster-computing framework. It provides a unified engine for large-scale data processing, supporting batch processing, real-time streaming, machine learning, and SQL queries.
+
+## Key Architecture
+
+- **In-Memory Computing**: Spark's primary advantage over legacy systems (like Hadoop MapReduce) is its ability to perform computations in-memory, cached across cluster nodes. This significantly reduces disk I/O operations and speeds up iterative algorithms.
+- **Unified APIs**: Provides consistent interfaces across languages (Python, Scala, Java, R) and abstractions:
+  - **DataFrames & Datasets**: Structured, tabular representations of data with lazy evaluation and optimization through the Catalyst Optimizer.
+  - **Spark SQL**: Direct querying of structured data using SQL.
+  - **Structured Streaming**: Stream-processing built on the Spark SQL engine, providing end-to-end ACID guarantees.
+- **Ecosystem Libraries**: Includes native support for machine learning (MLlib) and graph processing (GraphX).
+
+Spark is widely deployed in pipelines to ingest, clean, transform, and model data at petabyte scale.
+
+---
+*Part of the [Data & AI Terms](/wiki/terms/) glossary.*
+
+---
+
 # Apache Spark Structured Streaming
 URL: https://dataaiwiki.netlify.app/wiki/apache-spark-structured-streaming/
 Description: A scalable and faulttolerant stream processing engine built on the Spark SQL engine, allowing streaming queries to be expressed like batch queries. Part of t...
@@ -1367,6 +1389,515 @@ A wiki-style link format (e.g. [Target Page](/wiki/target-page/)) used to connec
 
 ---
 
+# Dremio
+URL: https://dataaiwiki.netlify.app/wiki/dremio/
+Description: Dremio is a highperformance, open and unified SQL Data Lakehouse engine. It is designed to run analytical queries directly on data stored in cloud object sto...
+
+Dremio is a high-performance, open and unified SQL [Data Lakehouse](/wiki/data-lakehouse/) engine. It is designed to run analytical queries directly on data stored in cloud object storage (AWS S3, Azure ADLS, Google Cloud Storage) and local data lakes (MinIO, Hadoop HDFS) without requiring data to be copied or loaded into a proprietary [Data Warehouse](/wiki/data-warehouse/). By separating compute from storage and offering an in-memory execution engine based on Apache Arrow, Dremio provides sub-second query performance, a logical Semantic Layer, and open-catalog integrations that support self-service business intelligence (BI) and AI-driven data exploration.
+
+---
+
+## 1. Executive Summary & Value Proposition
+
+In traditional data architectures, analytical execution requires complex Extract, Transform, Load (ETL) pipelines to extract data from operational sources, dump it into a raw data lake, and then re-load it into a cloud data warehouse. This creates significant latency, increases cost due to compute resources spent on moving data, and leads to data duplication and security risks. 
+
+Dremio's value proposition centers on eliminating these intermediate data movement steps:
+*   **Query-in-Place Performance**: Queries are executed directly against open file formats (Apache Parquet, ORC, CSV) and open table formats ([Apache Iceberg](/wiki/apache-iceberg/), [Delta Lake](/wiki/delta-lake/), [Apache-Hudi](/wiki/apache-hudi/)) stored in object storage.
+*   **No ETL Pipelines**: Instead of building physical ETL pipelines to create copies of tables for BI tools, users build logical Virtual Datasets (VDS) in a semantic layer.
+*   **Decoupled Compute and Storage**: Scale processing power independently of storage capacity, paying only for the compute instances utilized during query execution.
+*   **Open Data Lakehouse Foundation**: Retain control of your data in open, vendor-neutral formats, avoiding proprietary database structures and licensing lock-in.
+
+---
+
+## 2. Decoupled Compute & Storage Architecture
+
+Dremio operates on a decoupled architecture, isolating database storage from distributed processing compute resources. It relies on a clustered model comprising two primary roles: Coordinator nodes and Executor nodes.
+
+```
+       [ BI Tools / SQL Clients / AI Agents ]
+                        │
+                        ▼ (Arrow Flight SQL / JDBC / ODBC)
+              ┌───────────────────┐
+              │ Coordinator Node  │ (Planning, Optimization,
+              │    (Active)       │  Metadata Catalog, RBAC)
+              └─────────┬─────────┘
+                        │
+         ┌──────────────┴──────────────┐
+         ▼ (Fragment Execution Plan)   ▼
+  ┌──────────────┐              ┌──────────────┐
+  │Executor Node │              │Executor Node │
+  │ (C3 Cache,   │              │ (C3 Cache,   │ (Distributed Data
+  │  Arrow Engine)              │  Arrow Engine)  Processing & I/O)
+  └──────┬───────┘              └──────┬───────┘
+         │                             │
+         └──────────────┬──────────────┘
+                        ▼ (Parallel Read)
+           ┌────────────────────────┐
+           │ Cloud Object Storage   │ (Apache Iceberg, Parquet)
+           │   (S3 / ADLS / GCS)    │
+           └────────────────────────┘
+```
+
+### Coordinator Nodes
+Coordinator nodes serve as the entry points for client connections. Their primary responsibilities include:
+*   **Client Communication**: Hosting JDBC, ODBC, REST, and Arrow Flight interfaces.
+*   **Query Parsing & Validation**: Validating user queries against schema catalogs.
+*   **Query Optimization**: Translating raw SQL into optimized physical execution plans using a cost-based optimizer based on Apache Calcite.
+*   **Metadata Management**: Reading metadata from catalogs (like Glue, Hive, Polaris, or Nessie) and caching schema information.
+*   **Access Control**: Enforcing role-based access control (RBAC), column-level masking, and row-level security.
+
+In high-availability configurations, multiple Coordinator nodes run in parallel, using a shared metadata repository (usually stored on an external database or high-performance shared disk) and managed via ZooKeeper for leader election and coordination.
+
+### Executor Nodes
+Executor nodes are responsible for reading data from storage, performing transformations, sorting, aggregating, and joining datasets.
+*   **MPP Execution**: Executes query plans using a Massively Parallel Processing (MPP) framework, dividing plans into execution fragments distributed across the active executor pool.
+*   **In-Memory Processing**: Utilizes the Apache Arrow format to store data columns in RAM during execution, avoiding row-based serialization.
+*   **Caching**: Operates the Columnar Cloud Cache (C3) to save blocks of remote object storage locally on high-speed NVMe drives.
+
+### Scaling & Multi-Engine Isolation
+Dremio Software and Dremio Cloud support the creation of isolated "engines"—distinct clusters of Executor nodes. This enables organizations to separate workloads and avoid resource contention. For example:
+*   An **Ingestion Engine** (4 nodes) processes nightly scheduled dbt pipelines.
+*   A **Dashboard Engine** (8 nodes) serves rapid, interactive queries for Tableau and PowerBI dashboards.
+*   An **Ad-Hoc Engine** (2 nodes) supports exploratory data science notebooks.
+
+Engines can automatically scale up or down based on query queue depth and can spin down to zero nodes when no queries are active to save operational costs.
+
+---
+
+## 3. Apache Arrow Internals & Arrow Flight
+
+A primary bottleneck in modern analytical query processing is not CPU calculations, but rather I/O speed and the CPU overhead associated with serializing/deserializing data. Dremio overcomes this by utilizing Apache Arrow throughout its internal execution pipeline.
+
+### The Arrow Memory Layout
+Traditional databases process data in row-oriented formats (tuples). In memory, this leads to non-contiguous layout where attributes of the same row are adjacent, but attributes of the same column are scattered across memory addresses. This layout is inefficient for analytical queries that scan billions of values for a single attribute (e.g., calculating the average transaction value).
+
+Apache Arrow defines a standardized, language-independent columnar memory layout:
+*   **Column Contiguity**: All values for a given column are stored in a contiguous buffer in memory. This aligns with CPU cache lines, enabling Single Instruction, Multiple Data (SIMD) processor instructions to run vectorized filters across arrays of values in a single clock cycle.
+*   **Zero-Copy Design**: Data read from storage in Apache Parquet format (which is columnar) can be loaded into Arrow memory buffers with minimal parsing, avoiding costly restructuring.
+*   **Null Bitmaps**: Column nullability is tracked using a separate bitmask buffer, meaning missing data does not fragment the data buffers.
+
+### Arrow Flight & Flight SQL
+Traditionally, client tools fetch query results using JDBC or ODBC drivers. These protocols are row-oriented and require serializing columnar database data into a row stream over TCP, only for the client tool (such as a pandas DataFrame or BI tool) to reconstruct it back into columns. This "serialization tax" often accounts for up to 90% of data loading times.
+
+Dremio leverages **Arrow Flight**, a high-performance framework for transferring large datasets over the network:
+*   **Columnar Transport**: Data remains in Arrow columnar memory layout during network transmission, avoiding serialization.
+*   **Parallel Streaming**: Clients can open multiple parallel TCP connections to different Executor nodes to stream blocks of the result set concurrently.
+*   **Arrow Flight SQL**: A protocol that adds SQL command execution capabilities to Arrow Flight, enabling applications to run queries and manage transactions directly over Flight connection channels.
+
+| Connection Type | Serialization Tax | Bandwidth Utilization | Multi-Node Parallel Streams | Typical Throughput |
+| :--- | :--- | :--- | :--- | :--- |
+| **Legacy JDBC/ODBC** | High (Column $\rightarrow$ Row $\rightarrow$ Column) | Moderate | No (Single stream through Coordinator) | 10–50 MB/s |
+| **Arrow Flight SQL** | Zero (Column $\rightarrow$ Column) | Maximum | Yes (Parallel streams from Executors) | 1–3 GB/s+ |
+
+---
+
+## 4. Query Optimization via Apache Calcite
+
+At the core of Dremio's performance is its cost-based optimizer (CBO) built on Apache Calcite. The optimizer compiles SQL text into a logical plan, applies rewrite rules to minimize data scanning and network shuffling, and outputs a physical plan representing execution steps.
+
+```
+                   [ User SQL Query ]
+                           │
+                           ▼
+                 [ Calcite SQL Parser ]
+                           │
+                           ▼ (AST Generation)
+              [ Logical Relational Algebra ]
+                           │
+                           ├────────────────────────┐
+                           ▼                        ▼
+                [ Cost-Based Optimizer ]   [ Reflection Matcher ]
+                - Push-Downs               - Graph Isomorphism
+                - Partition Pruning        - Subgraph Substitution
+                - Runtime Filtering        - Materialization Matching
+                           │                        │
+                           └──────────┬─────────────┘
+                                      ▼
+                           [ Execution Plan Select ]
+                           - CPU Cost Estimate
+                           - Network Shuffle Cost
+                           - NVMe Disk Read Cost
+                                      │
+                                      ▼
+                        [ Distributed Executor Plan ]
+```
+
+### The Optimization Pipeline
+1.  **Parsing & Validation**: The Calcite parser converts the SQL query string into an Abstract Syntax Tree (AST).
+2.  **Logical Plan Generation**: The AST is translated into a tree of logical operators (relational algebra) representing scans, projects, filters, joins, and aggregates.
+3.  **Optimization Rule Application**: The engine applies hundreds of algebraic rules, including:
+    *   **Filter and Projection Push-Down**: Pushing filters and column selections down to the storage connector. When querying Parquet or Iceberg, Dremio instructs the file reader to read only specific column offsets and file chunks, completely skipping irrelevant bytes.
+    *   **Partition Pruning**: Using partition metadata (e.g., in Apache Iceberg tables) to skip whole directories of files if the query filters on a partition key (such as a date range).
+    *   **Join Reordering**: Analyzing table sizes and cardinality estimates to place the smaller table in memory for Hash Joins.
+4.  **Runtime Filtering**: Generating dynamic filter criteria at query execution time. For example, in a join between a large fact table and a filtered dimension table, the engine builds a bloom filter of the keys matching the dimension filter and broadcasts it to the threads scanning the fact table, discarding non-matching fact rows early.
+5.  **Physical Compilation**: Relational operators are converted into physical operators (e.g., HashJoin, Project, Scan) and packaged as execution fragments that can be scheduled across threads on Executor nodes.
+
+---
+
+## 5. Acceleration Engine: Data Reflections
+
+Dremio's most distinctive performance feature is **Data Reflections**. A Reflection is a physically optimized, pre-computed representation of a dataset stored in the lakehouse (as Apache Iceberg tables inside the Dremio-managed PDF directory). 
+
+### How Reflections Differ from Materialized Views
+In traditional databases, to speed up queries, administrators create materialized views. However, this introduces several operational challenges:
+1.  **Query Rewrite Overhead**: Users must rewrite their SQL queries to point to the materialized view name instead of the base tables.
+2.  **Staleness Management**: Users must manually manage refresh intervals and risk reading stale data.
+3.  **Brittle Hierarchies**: If the schema of the base table changes, the materialized view breaks.
+
+Dremio's Data Reflections address these challenges through **transparent query rewrite**:
+
+*   **Transparent Routing**: Users continue to query the raw physical tables or logical Virtual Datasets. The cost-based optimizer inspects the query, checks if a Reflection contains a matching projection or aggregation of the data, and automatically rewrites the execution plan to fetch data from the Reflection instead of the base source.
+*   **Decoupled Lifecycle**: The application layer is insulated from database administrator tuning. If a reflection is deleted, queries do not fail; they simply run slower on the raw datasets.
+*   **Automatic Refreshes**: Dremio manages the refresh pipeline, executing incremental updates or full refreshes on user-defined schedules.
+
+### Types of Reflections
+Dremio provides two main types of reflections:
+
+#### 1. Raw Reflections
+Raw Reflections accelerate basic selects, filters, joins, and sorts. They act as pre-computed join indexes or sorting indices.
+*   **Configuration**: The user selects a subset of columns from a physical or virtual dataset to include in the Reflection. They can also specify sorting fields and partitioning fields.
+*   **Storage**: Stored as a physical Apache Iceberg table partitioned and sorted according to the reflection configurations.
+*   **Use Case**: Accelerating queries that filter on specific columns or join large fact tables with large dimension tables.
+
+#### 2. Aggregation Reflections
+Aggregation Reflections accelerate queries containing `GROUP BY` operations and aggregations (such as `SUM`, `COUNT`, `AVG`, `MIN`, `MAX`).
+*   **Configuration**: The user defines a set of **Dimension columns** (used for grouping) and **Measure columns** (used for calculation).
+*   **Storage**: Stored as a highly compressed, pre-aggregated table.
+*   **Use Case**: Serving interactive BI dashboards (e.g., charts showing monthly sales by region), where the query scans millions of records but only displays aggregated results.
+
+### The Reflection Matching Engine
+The matching engine uses graph isomorphism to check if the query tree can be satisfied by a reflection. The process works as follows:
+1.  **Query Normalization**: The logical query tree and the reflection definitions are normalized into standard formats.
+2.  **Subgraph Matching**: The matcher searches for matching subgraphs between the query tree and the reflection definition. For example, if a reflection aggregates sales by `Day` and `Region`, and the query aggregates sales by `Month` and `Region`, the engine recognizes that it can satisfy the query by rolling up the day-level aggregation in the reflection to the month level.
+3.  **Cost Estimation**: If multiple reflections match, the Calcite optimizer calculates the cost of using each reflection and selects the plan with the lowest estimated cost.
+
+### Reflection SQL Implementation Examples
+
+Reflections can be created and managed via Dremio's SQL interface. For instance:
+
+```sql
+-- Enabling reflections on a dataset
+ALTER DATASET SpaceName.FolderName.SilverSales
+CREATE RAW REFLECTION SalesRaw
+USING COLUMNS (TransactionID, DateKey, CustomerID, ProductID, Amount)
+PARTITION BY (DateKey)
+LOCALSORT BY (CustomerID);
+
+-- Creating an aggregation reflection for high-performance dashboarding
+ALTER DATASET SpaceName.FolderName.GoldSalesSummary
+CREATE AGGREGATION REFLECTION DailySalesAgg
+DIMENSIONS (DateKey, ProductRegion, ProductCategory)
+MEASURES (Amount (SUM, AVG, COUNT, MAX));
+```
+
+---
+
+## 6. Columnar Cloud Cache (C3)
+
+When querying data from remote object stores like AWS S3 or Azure ADLS, network latency and throughput limitations restrict execution speed. To bridge this performance gap, Dremio implements the **Columnar Cloud Cache (C3)**.
+
+### How C3 Caching Works
+C3 caches data blocks locally on the Executor nodes:
+1.  **Block-Level Granularity**: C3 does not cache entire files. Instead, it partitions remote files into blocks (typically 1MB or 2MB) and caches only the specific blocks requested by a query.
+2.  **Local Fast NVMe Storage**: The cached blocks are stored directly on local NVMe or SSD drives attached to the Executor VM instances.
+3.  **Asynchronous Cache Populating**: When a query requests a block that is not cached (a cache miss), the Executor node fetches the block from remote storage, passes it to the execution engine, and asynchronously writes it to the local C3 directory. Subsequent queries requesting the same block read it directly from NVMe (a cache hit).
+4.  **Local Execution Alignment**: The Coordinator node uses consistent hashing to assign file scans to the specific Executor nodes that already host the cached blocks of those files, maximizing cache hit ratios.
+
+```
+  ┌─────────────────────────────────────────────────────────────┐
+  │                        Executor Node                        │
+  │                                                             │
+  │     ┌─────────┐                                             │
+  │     │  Query  │◄─────────────────┐                          │
+  │     │ Engine  │                  │                          │
+  │     └────┬────┘                  │ (Cache Hit:              │
+  │          │                       │  Direct Local Read)      │
+  │          ▼                       │                          │
+  │   ┌──────────────┐      ┌────────┴───────┐                  │
+  │   │  C3 Manager  │─────►│ Local NVMe/SSD │                  │
+  │   └──────┬───────┘      └────────▲───────┘                  │
+  │          │                       │                          │
+  │          │ (Cache Miss)          │ (Asynchronous            │
+  │          ▼                       │  Cache Write)            │
+  │     ┌─────────┐                  │                          │
+  │     │ Remote  │──────────────────┘                          │
+  │     │ Reader  │                                             │
+  │     └────┬────┘                                             │
+  └──────────┼──────────────────────────────────────────────────┘
+             │
+             ▼ (Cloud Network Read)
+  ┌──────────────────────┐
+  │ Cloud Object Storage │ (S3 / ADLS / GCS)
+  └──────────────────────┘
+```
+
+### Cache Eviction and Storage Efficiency
+C3 utilizes a Least Recently Used (LRU) eviction algorithm to manage disk capacity. When the local NVMe drive reaches its storage threshold, the oldest, least-accessed blocks are discarded to make room for new data. Since metadata is managed at the block level rather than the file level, C3 is highly efficient for large datasets where only a small percentage of partitions (e.g., current month data) are queried frequently.
+
+---
+
+## 7. The Unified Semantic Layer
+
+A key challenge in enterprise data management is data governance and metrics consistency. When different teams write custom SQL queries against raw tables, they often define key metrics (such as "active user" or "revenue") differently, leading to inconsistent reports.
+
+Dremio solves this through its **Semantic Layer**, which provides a single, unified view of all data assets.
+
+```
+       [ Tableau ]      [ PowerBI ]     [ Jupyter Notebook ]
+            │                │                   │
+            └────────────────┼───────────────────┘
+                             ▼ (Logical Layer Access)
+       ┌───────────────────────────────────────────────────┐
+       │             Dremio Semantic Layer                 │
+       │                                                   │
+       │  ┌─────────────────────────────────────────────┐  │
+       │  │             Gold Virtual Views              │  │
+       │  │ (Dashboard Aggregations & Metrics Views)    │  │
+       │  └──────────────────────┬──────────────────────┘  │
+       │                         ▼                         │
+       │  ┌─────────────────────────────────────────────┐  │
+       │  │            Silver Virtual Views             │  │
+       │  │ (Business Rules, Joins, Transformations)    │  │
+       │  └──────────────────────┬──────────────────────┘  │
+       │                         ▼                         │
+       │  ┌─────────────────────────────────────────────┐  │
+       │  │            Bronze Virtual Views             │  │
+       │  │  (Schema Normalization, Type Casting)       │  │
+       │  └──────────────────────┬──────────────────────┘  │
+       └─────────────────────────┼─────────────────────────┘
+                                 ▼ (Physical Connections)
+       ┌───────────────────────────────────────────────────┐
+       │                Physical Datasets                  │
+       │   - Iceberg Tables (S3)    - Snowflake Tables     │
+       │   - PostgreSQL Database    - Delta Lake (ADLS)    │
+       └───────────────────────────────────────────────────┘
+```
+
+### Physical vs. Virtual Datasets
+The Semantic Layer distinguishes between two types of datasets:
+*   **Physical Datasets (PDS)**: The physical files and tables stored in configured data sources (e.g., a table in a PostgreSQL database, an Iceberg table in S3, or a folder of CSV files).
+*   **Virtual Datasets (VDS)**: Logical representations of data created using standard SQL views. VDS do not store any physical data; they only store the SQL query definition. When a user queries a VDS, Dremio compiles the underlying SQL views down to the physical sources.
+
+### Namespace Hierarchy: Spaces, Folders, and Sources
+Dremio organizes datasets into a logical path hierarchy:
+1.  **Sources**: Connections to physical storage systems. Examples include `AmazonS3`, `AdlsFinance`, `SnowflakeDWH`, `PostgreSQLProd`.
+2.  **Spaces**: Logical domains created by administrators to organize work. Examples include `Finance`, `Marketing`, `SupplyChain`. Spaces act as root folders.
+3.  **Folders**: Subdirectories within Spaces or Sources to further group VDS or PDS.
+
+A typical full path to a dataset looks like this:
+`Finance.Invoicing.GoldSalesYearly` (Space: `Finance`, Folder: `Invoicing`, VDS: `GoldSalesYearly`).
+
+### Fine-Grained Security & Governance
+The Semantic Layer serves as the control point for security:
+*   **Role-Based Access Control (RBAC)**: Granting select, edit, or administrative permissions to specific users or Active Directory groups on individual Spaces, Folders, or Datasets.
+*   **Column-Level Masking**: Masking sensitive data (such as PII, credit card numbers, or SSNs) based on the user's role.
+*   **Row-Level Security (RLS)**: Filtering the rows returned by a query based on user identity or attribute context.
+
+#### Security Policy Implementation Examples
+
+Organizations can enforce policies directly within logical views:
+
+```sql
+-- Creating a view with column masking and row-level security
+CREATE OR REPLACE VIEW Finance.Invoicing.SecureTransactions AS
+SELECT 
+  TransactionID,
+  CustomerID,
+  -- Mask amount column for non-finance users
+  CASE 
+    WHEN is_member('FinanceAdmin') THEN Amount 
+    ELSE Amount * 0.0 -- obscure or zero-out data
+  END AS Amount,
+  -- Mask social security number column
+  CASE 
+    WHEN is_member('HR') THEN SSN
+    ELSE 'XXX-XX-' || RIGHT(SSN, 4)
+  END AS MaskedSSN,
+  TransactionDate,
+  CountryRegion
+FROM 
+  AmazonS3.RawData.Transactions
+WHERE 
+  -- Row-level security: only return rows matching user's region assignment
+  is_member('GlobalAdmin') OR CountryRegion = (
+    SELECT UserRegion FROM AmazonS3.SecurityCatalog.UserMapping WHERE UserName = CURRENT_USER
+  );
+```
+
+---
+
+## 8. Catalog Ecosystem & Governance: Nessie and Polaris
+
+Dremio is built on open standards and integrates with modern open catalog systems to manage metadata, transactions, and tables across different analytical engines.
+
+### Dremio Open Catalog & Project Nessie
+Dremio utilizes **Project Nessie** as a foundational catalog option, enabling Git-like version control for data tables. This integration provides:
+*   **Multi-Table Transactions**: Commit changes to multiple tables in a single transaction. If one commit fails, the entire transaction rolls back, preventing catalog corruption.
+*   **Zero-Copy Branching**: Create isolated data branches (e.g., `git branch dev_test`) to run ETL processes without affecting the production catalog. The branch only references the metadata pointers, meaning no physical files are duplicated.
+*   **Data Merging**: Merge changes from `dev_test` into `main` atomically, exposing updates to users instantly.
+
+```sql
+-- Create a new development branch in a Nessie catalog
+CREATE BRANCH dev_ingest IN CatalogName FROM main;
+
+-- Switch session context to the development branch
+USE BRANCH dev_ingest IN CatalogName;
+
+-- Perform data modifications in isolation
+INSERT INTO CatalogName.Bronze.SalesData SELECT * FROM SourceS3.NewSales;
+
+-- Once verified, merge the development branch back into main
+MERGE BRANCH dev_ingest INTO main IN CatalogName;
+```
+
+### Apache Polaris Integration
+Dremio has native support for **Apache Polaris**, an open-source, metadata-compliant REST catalog for Iceberg. 
+*   **Multi-Engine Interoperability**: Polaris provides a centralized catalog service that allows engines like Dremio, Apache Spark, Flink, and Snowflake to write to and read from the same Iceberg tables.
+*   **Unified Access Control**: Access control permissions defined in Polaris are respected by all connecting engines, providing uniform governance without duplicating policies across different systems.
+
+### Legacy Catalogs
+For backward compatibility, Dremio continues to support legacy catalogs, including:
+*   **AWS Glue Catalog**: Integrating with AWS serverless metadata catalogs to map Parquet and Iceberg tables.
+*   **Hive Metastore (HMS)**: Connecting to existing Hadoop metadata stores.
+*   **Unity Catalog**: Integrating with Databricks metadata catalog structures.
+
+---
+
+## 9. Deployment & Topologies
+
+Dremio can be deployed in diverse environments, from fully managed SaaS platforms to self-managed containerized clusters.
+
+### Dremio Cloud
+Dremio Cloud is a fully managed SaaS version of Dremio available on AWS and Azure:
+*   **SaaS Architecture**: Dremio manages the Coordinator nodes and control plane. The customer runs Executor nodes in their own VPC, ensuring data remains inside their security perimeter.
+*   **Automatic Auto-Scaling**: Compute engines automatically spawn and terminate Executor nodes based on query volume, optimizing infrastructure costs.
+*   **Arctic Catalog**: Dremio Cloud includes a built-in, serverless Iceberg catalog based on Project Nessie.
+
+### Dremio Software (Self-Managed)
+Dremio Software is the enterprise edition deployed in customer-managed environments (on-premises or cloud VMs):
+*   **Kubernetes Orchestration**: Deployed using Helm charts on managed Kubernetes platforms (AWS EKS, Azure AKS, Google GKE, or Red Hat OpenShift).
+*   **Bare-Metal & VM Topologies**: Can be installed directly on Red Hat Linux, CentOS, or Ubuntu VM instances.
+*   **Hybrid Cloud Topologies**: Dremio clusters running on-premises can connect to remote cloud storage while keeping compute near internal systems.
+
+---
+
+## 10. Modern SQL and DML Features
+
+Dremio supports standard SQL dialects, including full Data Manipulation Language (DML) operations on transactional table formats.
+
+### Iceberg DML Read/Write Paths
+When performing DML operations (such as `UPDATE`, `DELETE`, `MERGE INTO`) on [Apache Iceberg](/wiki/apache-iceberg/) tables, Dremio supports two write path strategies:
+*   **Copy-on-Write (CoW)**: When a row is modified, Dremio reads the entire data file containing that row and writes a new data file with the modifications applied. This results in slower write operations but faster read operations because there are no delta logs to merge.
+*   **Merge-on-Read (MoR)**: When a row is modified, Dremio writes a separate delete file containing the file path and row offset of the modified row, along with a new data file containing the updated value. During read operations, the engine merges the delete file with the base data files. This results in faster write operations but introduces read-side merge overhead.
+
+### SQL Table Maintenance
+
+For transactional tables, Dremio supports SQL maintenance operations to optimize storage layouts and remove historical data.
+
+#### Compaction (`OPTIMIZE TABLE`)
+Over time, streaming ingestions write many small data files to disk, increasing metadata overhead and slowing down query scans. Dremio provides compaction commands to merge small files:
+
+```sql
+-- Compact small data files into larger files and update the Iceberg metadata
+OPTIMIZE TABLE CatalogName.Bronze.SensorTelemetry 
+REWRITE DATA USING BIN_PACK;
+```
+
+#### Snapshot Cleanup (`VACUUM TABLE`)
+To prevent cloud storage costs from growing due to historic metadata snapshots (which are retained to support time-travel queries), Dremio supports cleaning up old states:
+
+```sql
+-- Expire snapshots older than 7 days and delete orphan files from object storage
+VACUUM TABLE CatalogName.Bronze.SensorTelemetry 
+EXPIRE SNAPSHOTS RETAIN_LAST 5 DAYS;
+```
+
+### Generative AI SQL Functions
+Dremio includes built-in AI functions that allow users to invoke Large Language Models (LLMs) directly within standard SQL queries. This enables semantic parsing, translation, categorization, and data extraction at scale:
+
+*   **`AI_COMPLETE`**: Completes prompts or answers questions using tabular data context.
+*   **`AI_CLASSIFY`**: Tags or classifies records into defined categories.
+*   **`AI_GENERATE`**: Generates complex text or extracts structured entities using predefined schemas.
+
+#### AI SQL Examples
+
+```sql
+-- Summarizing customer reviews
+SELECT 
+  ReviewID,
+  ProductID,
+  AI_COMPLETE(
+    'Summarize the following product review in less than 15 words: ' || ReviewText
+  ) AS ShortSummary
+FROM 
+  AmazonS3.RawData.CustomerReviews;
+
+-- Classifying feedback sentiment
+SELECT 
+  FeedbackID,
+  FeedbackText,
+  AI_CLASSIFY(
+    FeedbackText, 
+    ARRAY['Positive', 'Neutral', 'Negative']
+  ) AS SentimentTag
+FROM 
+  AmazonS3.RawData.Feedback;
+```
+
+---
+
+## 11. BI and Development Integration
+
+Dremio serves as a bridge between the physical storage layer and data consumption tools:
+
+### BI Tool Connectors
+*   **Tableau**: Native connector with Single Sign-On (SSO) support. Tableau uses Flight SQL or ODBC to send SQL queries to Dremio, which accelerates visual rendering using Aggregation Reflections.
+*   **PowerBI**: DirectQuery connector with Microsoft Entra ID integration. Supports automatic SSO credential delegation.
+*   **Apache Superset**: Connects using the SQL-Alchemy dialect wrapper over Flight SQL or JDBC.
+
+### Developer Tooling & Automation
+*   **dbt (Data Build Tool)**: The official `dbt-dremio` adapter allows data engineers to write modular SQL code and compile it into physical tables and logical Virtual Datasets in Dremio.
+*   **n8n workflows**: Automation connectors that execute queries or fetch catalog metadata asynchronously.
+*   **Python (dremioframe)**: A Python library that allows developers to run SQL queries in Dremio and load results directly into pandas or Polars DataFrames using Arrow Flight SQL.
+
+---
+
+## 12. Operational Best Practices & Performance Tuning
+
+To maintain high performance and control costs in a production Dremio deployment, administrators should follow these guidelines:
+
+### Partitioning Strategy
+*   **Avoid Over-Partitioning**: Do not partition tables on columns with high cardinality (such as UUIDs or timestamps). This creates millions of small partition folders and files, degrading metadata performance.
+*   **Iceberg Identity Partitioning**: Use partition transforms (such as hourly, daily, or bucketed transforms) provided by Iceberg, allowing Dremio's optimizer to apply partition pruning without requiring users to reference the partition column directly.
+
+### Reflection Sizing & Tuning
+*   **Reflect Aggregations, Not Raw Data**: Avoid creating Raw Reflections on entire tables that contain hundreds of columns. Only include the columns used in query filters, projections, and joins.
+*   **Use Incremental Refreshes**: Configure reflections to refresh incrementally rather than performing full refreshes, especially for log and transaction datasets that are append-only.
+*   **Set Refresh Schedules Wisely**: Align reflection refresh schedules with the refresh rate of the underlying datasets (e.g., nightly refresh for daily batch loads, or every 10 minutes for near-real-time streaming tables).
+
+### Monitoring and Debugging
+*   **Query Profile Audits**: Inspect query profiles in the Jobs history page to verify if reflections are being utilized. If a query is not using an expected reflection, check the "Acceleration" tab to identify why the matching engine rejected the substitution.
+*   **System Tables**: Query the system catalog tables to track query performance and resource consumption:
+
+```sql
+-- Query query history table to identify slow queries
+SELECT 
+  query_id,
+  user_name,
+  duration_ms,
+  query_text
+FROM 
+  sys.queries 
+ORDER BY 
+  duration_ms DESC 
+LIMIT 10;
+```
+
+---
+*Part of the [Data & AI Terms](/wiki/terms/) glossary.*
+
+---
+
 # DuckDB
 URL: https://dataaiwiki.netlify.app/wiki/duckdb/
 Description: An opensource, embedded columnar database management system designed for analytical query processing. Often called the 'SQLite for analytics', it runs direct...
@@ -1636,6 +2167,27 @@ URL: https://dataaiwiki.netlify.app/wiki/fine-tuning/
 Description: The process of taking a pretrained machine learning model and training it further on a smaller, taskspecific dataset to adapt its capabilities to a specializ...
 
 The process of taking a pre-trained machine learning model and training it further on a smaller, task-specific dataset to adapt its capabilities to a specialized domain.
+
+---
+*Part of the [Data & AI Terms](/wiki/terms/) glossary.*
+
+---
+
+# Fivetran
+URL: https://dataaiwiki.netlify.app/wiki/fivetran/
+Description: Fivetran is a commercial cloudbased data integration platform that automates the extraction and loading of data from various sources (SaaS applications, data...
+
+Fivetran is a commercial cloud-based data integration platform that automates the extraction and loading of data from various sources (SaaS applications, databases, file stores) into destinations such as a [Data Warehouse](/wiki/data-warehouse/) or [Data Lakehouse](/wiki/data-lakehouse/). 
+
+## Key Characteristics
+
+Fivetran follows an [ELT (Extract, Transform, Load)](/wiki/elt-extract-transform-load/) methodology rather than traditional ETL, loading raw source data directly into the target platform and leaving transformations to downstream tools like [DBT (Data Build Tool)](/wiki/dbt-data-build-tool/).
+
+- **Fully Managed Connectors**: Offers zero-configuration pipelines that automatically adapt to schema changes (schema drift) in source APIs or databases.
+- **Incremental Loading**: Uses log-based [CDC (Change Data Capture)](/wiki/cdc-change-data-capture/) to capture and replicate only updated or new records, reducing source system overhead and network transfer times.
+- **Idempotency & Re-sync**: Ensures that data delivery is resilient to failures by maintaining sync state, allowing pipelines to resume seamlessly without duplicating or corrupting destination tables.
+
+By abstracting API maintenance, schema mapping, and pipeline scaling, Fivetran acts as a key ingestion engine in modern data stack configurations.
 
 ---
 *Part of the [Data & AI Terms](/wiki/terms/) glossary.*
@@ -2285,6 +2837,126 @@ URL: https://dataaiwiki.netlify.app/wiki/merge-on-read/
 Description: A write strategy in transactional table formats where updates and deletes are written to separate log files (delete files). During read execution, the engine...
 
 A write strategy in transactional table formats where updates and deletes are written to separate log files (delete files). During read execution, the engine merges the base files with the logs.
+
+---
+*Part of the [Data & AI Terms](/wiki/terms/) glossary.*
+
+---
+
+# Monte Carlo
+URL: https://dataaiwiki.netlify.app/wiki/monte-carlo/
+Description: Monte Carlo is an enterprise data observability platform designed to track, alert, and resolve issues related to data quality and reliability. It aims to red...
+
+Monte Carlo is an enterprise data observability platform designed to track, alert, and resolve issues related to data quality and reliability. It aims to reduce "data downtime"—periods where data is missing, erroneous, or otherwise unusable.
+
+## Core Features
+
+Unlike traditional static data quality testing tools, Monte Carlo utilizes a metadata-driven, machine learning approach to continuously monitor the health of data systems:
+
+- **Anomalous Volume & Freshness Detection**: Automatically learns historical update frequencies and table volume patterns to alert engineers when tables are updated late or contain unexpected row counts.
+- **Schema Drift Monitoring**: Tracks field additions, deletions, and data type modifications, alerting teams to potential downstream breakage before reports or pipelines fail.
+- **End-to-End Lineage**: Generates automated data lineage graphs showing how tables, views, and dashboards relate, enabling quick impact analysis and root-cause determination for data incidents.
+- **Data Quality Rules**: Allows users to specify custom validation checks alongside automated ML monitors to enforce business-specific rules.
+
+Monte Carlo integrates across lakehouses, warehouses, orchestration engines, and BI tools to provide visibility into data health.
+
+---
+*Part of the [Data & AI Terms](/wiki/terms/) glossary.*
+
+---
+
+# Open Source Tools
+URL: https://dataaiwiki.netlify.app/wiki/open-source/
+Description: Welcome to the Open Source Tools section of the Data & AI Wiki. Below is an index of prominent opensource engines, table formats, catalog systems, and orches...
+
+Welcome to the Open Source Tools section of the Data & AI Wiki. Below is an index of prominent open-source engines, table formats, catalog systems, and orchestration tools.
+
+## Compute & Processing Engines
+
+- [Apache Spark](/wiki/apache-spark/)
+- [Trino](/wiki/trino/)
+- [Apache Flink](/wiki/flink-apache-flink/)
+- [DuckDB](/wiki/duckdb/)
+- [Apache Spark Structured Streaming](/wiki/apache-spark-structured-streaming/)
+
+## Table Formats & Storage
+
+- [Apache Iceberg](/wiki/apache-iceberg/)
+- [Delta Lake](/wiki/delta-lake/)
+- [Apache Hudi](/wiki/apache-hudi/)
+
+## Catalogs & Governance
+
+- [Apache Polaris](/wiki/apache-polaris/)
+- [Project Nessie](/wiki/project-nessie/)
+- [Hive Metastore](/wiki/hive-metastore/)
+
+## Orchestration & Pipelines
+
+- [Apache Airflow](/wiki/airflow/)
+- [Dagster](/wiki/dagster/)
+
+---
+*Part of the [Data & AI Terms](/wiki/terms/) glossary.*
+
+---
+
+# Project Nessie
+URL: https://dataaiwiki.netlify.app/wiki/project-nessie/
+Description: Project Nessie is an opensource, transactional Data Catalog designed primarily to manage tables in an open Data Lakehouse (supporting formats like Apache Ice...
+
+Project Nessie is an open-source, transactional [Data Catalog](/wiki/data-catalog/) designed primarily to manage tables in an open [Data Lakehouse](/wiki/data-lakehouse/) (supporting formats like [Apache Iceberg](/wiki/apache-iceberg/) and [Delta Lake](/wiki/delta-lake/)). 
+
+## Git-Like Data Management
+
+Nessie introduces version control concepts to data engineering pipelines, allowing users to interact with their data lakehouse in a manner similar to Git:
+
+- **Branches**: Users can create branches of their catalog (e.g., a `dev` branch) to test new ingestions or transformations in isolation. Changes are metadata-only and do not duplicate underlying files.
+- **Commits**: Catalog operations are bundled as atomic commits, ensuring that concurrent readers always see consistent, un-corrupted states of the tables.
+- **Merges**: Once isolation tests succeed, changes can be merged back into the main branch (`main`) atomically, preventing half-written states from being exposed.
+- **Tags & Time-Travel**: Users can tag specific catalog states (e.g., `q4_finance_close`) and query exactly what the data looked like at that commit or tag.
+
+By providing multi-table transaction guarantees across entire namespaces, Nessie enables robust, zero-copy data operations.
+
+---
+*Part of the [Data & AI Terms](/wiki/terms/) glossary.*
+
+---
+
+# Snowflake
+URL: https://dataaiwiki.netlify.app/wiki/snowflake/
+Description: Snowflake is a fully managed, cloudnative data platform that functions primarily as an enterprise Data Warehouse. It is designed to run on top of major cloud...
+
+Snowflake is a fully managed, cloud-native data platform that functions primarily as an enterprise [Data Warehouse](/wiki/data-warehouse/). It is designed to run on top of major cloud infrastructures (AWS, GCP, Azure) and separates storage, compute, and service management layers.
+
+## Core Architecture
+
+Snowflake is built on a patented shared-data, multi-cluster architecture that decouples resources:
+
+- **Database Storage**: Data loaded into Snowflake is reorganized into a proprietary columnar, compressed, and optimized format called micro-partitions. It is stored in cloud object storage, and is accessible only through SQL queries executed via Snowflake.
+- **Query Processing (Compute)**: Queries are processed using "Virtual Warehouses." Each warehouse is an independent MPP (Massively Parallel Processing) compute cluster (backed by VM instances) that does not share compute resources with other warehouses. This enables independent scaling of workloads (e.g., ETL vs. BI queries) without resource contention.
+- **Cloud Services**: A collection of services that coordinate activities across Snowflake, including user authentication, metadata management, optimization, transaction control (ACID compliance), and access controls.
+
+Snowflake supports standard SQL and integrates with diverse data integration, business intelligence, and machine learning tools, establishing a central repository for structured, semi-structured (JSON, Avro, Parquet), and unstructured data.
+
+---
+*Part of the [Data & AI Terms](/wiki/terms/) glossary.*
+
+---
+
+# Trino
+URL: https://dataaiwiki.netlify.app/wiki/trino/
+Description: Trino is an opensource, distributed SQL query engine designed for lowlatency adhoc querying and analytics over largescale datasets. Formerly known as PrestoS...
+
+Trino is an open-source, distributed SQL query engine designed for low-latency ad-hoc querying and analytics over large-scale datasets. Formerly known as PrestoSQL, Trino is built on a Massively Parallel Processing (MPP) architecture.
+
+## Key Characteristics
+
+- **Decoupled Storage**: Unlike a traditional database, Trino does not have a native storage format. Instead, it queries data in-place from remote sources, including data lakes (with formats like [Apache Iceberg](/wiki/apache-iceberg/) or [Delta Lake](/wiki/delta-lake/)), relational databases (MySQL, PostgreSQL), and NoSQL stores (Elasticsearch, Cassandra).
+- **Query Federation**: Allows users to write a single SQL query that joins data across multiple distinct storage systems (e.g., joining an Iceberg table on AWS S3 with customer profile data stored in PostgreSQL).
+- **In-Memory Pipeline Execution**: Designed for high performance, Trino processes queries in-memory across a cluster of workers without writing intermediate states to disk.
+
+Trino is widely used to provide interactive BI and ad-hoc query capabilities on top of enterprise data lakes.
 
 ---
 *Part of the [Data & AI Terms](/wiki/terms/) glossary.*
