@@ -1,0 +1,48 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import WikiSidebar from '../components/WikiSidebar.astro';
+
+interface Frontmatter {
+  title: string;
+  sourceFile?: string;
+  slug?: string;
+  description?: string;
+}
+
+interface Props {
+  frontmatter: Frontmatter;
+}
+
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+  <div class="wiki-container container">
+    <aside class="wiki-sidebar-wrapper">
+      <WikiSidebar />
+    </aside>
+    
+    <main id="main-content" class="wiki-main-content">
+      <article class="markdown-content" data-pagefind-body>
+        <h1 class="wiki-page-title">{frontmatter.title}</h1>
+        <slot />
+      </article>
+      
+      {frontmatter.sourceFile && (
+        <div class="wiki-meta">
+          <span>
+            This page is mirrored from the GitHub Wiki. 
+            <a 
+              href={`https://github.com/AlexMercedCoder/dataaiwiki/wiki/${frontmatter.sourceFile.replace(/\.md$/, '')}`} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="wiki-source-link"
+            >
+              View original on GitHub
+            </a>
+          </span>
+        </div>
+      )}
+    </main>
+  </div>
+</BaseLayout>

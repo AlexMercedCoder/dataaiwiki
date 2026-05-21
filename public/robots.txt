@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dataaiwiki.netlify.app/sitemap-index.xml

@@ -1,0 +1,183 @@
+---
+import { getCollection } from 'astro:content';
+
+const entries = await getCollection('wiki');
+
+// Sort entries alphabetically by title, but put the Home page at the top
+const sortedEntries = entries
+  .filter(entry => entry.id !== 'home')
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+const homeEntry = entries.find(entry => entry.id === 'home');
+
+const currentPath = Astro.url.pathname;
+const cleanPath = currentPath.replace(/\/$/, '');
+---
+
+<nav class="wiki-sidebar-nav" aria-label="Wiki Navigation">
+  <button class="sidebar-toggle" aria-expanded="false" aria-controls="sidebar-list" type="button">
+    <span>Menu &amp; Pages</span>
+    <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+  </button>
+  
+  <div id="sidebar-list" class="sidebar-list-container">
+    <div class="sidebar-section">
+      <h3 class="sidebar-heading">Index</h3>
+      <ul class="sidebar-links">
+        {homeEntry && (
+          <li>
+            <a 
+              href="/wiki/" 
+              class={cleanPath === '/wiki' ? 'active-link' : ''}
+            >
+              {homeEntry.data.title}
+            </a>
+          </li>
+        )}
+      </ul>
+    </div>
+    
+    <div class="sidebar-section">
+      <h3 class="sidebar-heading">All Articles</h3>
+      <ul class="sidebar-links">
+        {sortedEntries.map(entry => {
+          const entryPath = `/wiki/${entry.id}/`;
+          const isActive = cleanPath === `/wiki/${entry.id}`;
+          return (
+            <li>
+              <a 
+                href={entryPath} 
+                class={isActive ? 'active-link' : ''}
+              >
+                {entry.data.title}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Add mobile collapse/toggle logic
+  const setupToggle = () => {
+    const toggle = document.querySelector('.sidebar-toggle');
+    const container = document.querySelector('.sidebar-list-container');
+    
+    if (toggle && container) {
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        container.classList.toggle('expanded');
+      });
+    }
+  };
+
+  // Run on load
+  setupToggle();
+  // Support Astro View Transitions if added later
+  document.addEventListener('astro:after-swap', setupToggle);
+</script>
+
+<style>
+  .wiki-sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .sidebar-toggle {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: var(--color-pure-white);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-main);
+    padding: 0.75rem 1.25rem;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 1rem;
+  }
+
+  .sidebar-toggle:hover {
+    color: var(--color-alert-crimson);
+    border-color: var(--color-alert-crimson);
+  }
+
+  .sidebar-section {
+    margin-bottom: 2rem;
+  }
+
+  .sidebar-heading {
+    font-family: var(--font-primary);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    margin-bottom: 0.75rem;
+    border-bottom: 1px dashed rgba(71, 36, 37, 0.2);
+    padding-bottom: 0.25rem;
+  }
+
+  .sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .sidebar-links li {
+    margin-bottom: 0.5rem;
+  }
+
+  .sidebar-links a {
+    display: block;
+    color: var(--color-text-main);
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 0.25rem 0;
+    border-left: 2px solid transparent;
+    padding-left: 0.5rem;
+    transition: all 0.2s ease;
+  }
+
+  .sidebar-links a:hover {
+    color: var(--color-alert-crimson);
+    border-left-color: var(--color-alert-crimson);
+    border-left-style: dashed;
+  }
+
+  .sidebar-links a.active-link {
+    font-weight: 700;
+    color: var(--color-alert-crimson);
+    border-left-color: var(--color-alert-crimson);
+    border-left-style: solid;
+    background-color: rgba(71, 36, 37, 0.03);
+  }
+
+  @media (max-width: 767px) {
+    .sidebar-toggle {
+      display: flex;
+    }
+
+    .sidebar-list-container {
+      display: none;
+      background-color: var(--color-pure-white);
+      border: 1px solid var(--color-border);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .sidebar-list-container.expanded {
+      display: block;
+    }
+    
+    .sidebar-section:last-child {
+      margin-bottom: 0;
+    }
+  }
+</style>
