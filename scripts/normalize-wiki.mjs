@@ -2,7 +2,9 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-const rawDir = path.resolve('./wiki-raw');
+const localWikiDir = path.resolve('./wiki');
+const rawWikiDir = path.resolve('./wiki-raw');
+const rawDir = fs.existsSync(localWikiDir) ? localWikiDir : rawWikiDir;
 const contentDir = path.resolve('./src/content/wiki');
 const destAssetsDir = path.resolve('./public/wiki-assets');
 
@@ -116,6 +118,8 @@ function processWiki() {
     slugLookup[simplifiedKey] = slug;
   }
 
+  const wikiPagesForLLM = [];
+
   for (const filePath of mdFiles) {
     const relativePath = path.relative(rawDir, filePath);
     if (path.basename(relativePath).startsWith('_')) {
@@ -222,8 +226,56 @@ function processWiki() {
     
     const output = matter.stringify(content, frontmatter);
     fs.writeFileSync(destFilePath, output, 'utf-8');
+
+    // Add page details to the LLM index
+    const coreSlugs = new Set(['home', 'terms', 'individuals', 'vendor-platforms']);
+    if (!coreSlugs.has(slug)) {
+      wikiPagesForLLM.push({
+        title,
+        slug,
+        description,
+        content
+      });
+    }
+
     pagesProcessed++;
   }
+
+  // Sort articles alphabetically
+  wikiPagesForLLM.sort((a, b) => a.title.localeCompare(b.title));
+
+  // Write llms.txt
+  let llmsTxt = `# Data & AI Wiki\n\n`;
+  llmsTxt += `> Mirror website for AlexMercedCoder's Data and AI Wiki. A collection of articles on lakehouses, semantic layers, concepts, and platforms.\n\n`;
+  llmsTxt += `## Core Pages\n\n`;
+  llmsTxt += `- [Home](https://dataaiwiki.netlify.app/wiki/) - Main entry point and directory list.\n`;
+  llmsTxt += `- [Terms](https://dataaiwiki.netlify.app/wiki/terms/) - Complete list of Data & AI terms.\n`;
+  llmsTxt += `- [Individuals](https://dataaiwiki.netlify.app/wiki/individuals/) - Key individuals in the Data & AI space.\n`;
+  llmsTxt += `- [Vendor Platforms](https://dataaiwiki.netlify.app/wiki/vendor-platforms/) - Overview of vendor platforms.\n\n`;
+  llmsTxt += `## Wiki Articles\n\n`;
+
+  for (const page of wikiPagesForLLM) {
+    const cleanDesc = page.description.replace(/\s+/g, ' ').trim();
+    llmsTxt += `- [${page.title}](https://dataaiwiki.netlify.app/wiki/${page.slug}/) - ${cleanDesc}\n`;
+  }
+
+  const publicDir = path.resolve('./public');
+  fs.writeFileSync(path.join(publicDir, 'llms.txt'), llmsTxt, 'utf-8');
+
+  // Write llms-full.txt
+  let llmsFullTxt = `# Data & AI Wiki - Full Contents\n\n`;
+  llmsFullTxt += `This file contains the complete consolidated contents of the Data & AI Wiki.\n\n`;
+  llmsFullTxt += `---\n\n`;
+
+  for (const page of wikiPagesForLLM) {
+    llmsFullTxt += `# ${page.title}\n`;
+    llmsFullTxt += `URL: https://dataaiwiki.netlify.app/wiki/${page.slug}/\n`;
+    llmsFullTxt += `Description: ${page.description}\n\n`;
+    llmsFullTxt += `${page.content}\n\n`;
+    llmsFullTxt += `---\n\n`;
+  }
+
+  fs.writeFileSync(path.join(publicDir, 'llms-full.txt'), llmsFullTxt, 'utf-8');
 
   console.log('\n--- Wiki Normalization Complete ---');
   console.log(`Pages processed: ${pagesProcessed}`);

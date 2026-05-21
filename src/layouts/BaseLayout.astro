@@ -7,13 +7,49 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  isArticle?: boolean;
+  image?: string;
 }
 
-const { title, description = "The Data & AI Wiki: A mirror repository of articles on data lakehouse architectures, semantic layers, concepts, and platforms." } = Astro.props;
+const { 
+  title, 
+  description = "The Data & AI Wiki: A mirror repository of articles on data lakehouse architectures, semantic layers, concepts, and platforms.", 
+  isArticle = false,
+  image = "/og-image.png"
+} = Astro.props;
 
 // Ensure we have a valid canonical URL
 const siteUrl = Astro.site ? Astro.site.toString() : 'https://dataaiwiki.netlify.app/';
 const canonicalURL = new URL(Astro.url.pathname, siteUrl);
+const imageUrl = new URL(image, siteUrl);
+
+// Resolve the full title to avoid double appending the brand name
+const fullTitle = title.includes("Data & AI Wiki") ? title : `${title} | Data & AI Wiki`;
+
+// Create JSON-LD schema
+const schema = isArticle
+  ? {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": fullTitle,
+      "description": description,
+      "url": canonicalURL.toString(),
+      "image": imageUrl.toString(),
+      "inLanguage": "en",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Data & AI Wiki",
+        "url": siteUrl
+      }
+    }
+  : {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": fullTitle,
+      "description": description,
+      "url": canonicalURL.toString(),
+      "image": imageUrl.toString()
+    };
 ---
 
 <!DOCTYPE html>
@@ -30,21 +66,26 @@ const canonicalURL = new URL(Astro.url.pathname, siteUrl);
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet" />
 
     <!-- SEO Meta Tags -->
-    <title>{title} | Data & AI Wiki</title>
+    <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={isArticle ? "article" : "website"} />
     <meta property="og:url" content={canonicalURL} />
-    <meta property="og:title" content={`${title} | Data & AI Wiki`} />
+    <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
+    <meta property="og:image" content={imageUrl} />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={canonicalURL} />
-    <meta property="twitter:title" content={`${title} | Data & AI Wiki`} />
+    <meta property="twitter:title" content={fullTitle} />
     <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={imageUrl} />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </head>
   <body>
     <!-- Accessibility Skip to Content -->

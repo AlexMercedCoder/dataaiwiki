@@ -25,6 +25,7 @@ pnpm-debug.log*
 
 # wiki mirror temp/generated directories
 wiki-raw/
+wiki/
 src/content/wiki/
 public/wiki-assets/
 .netlify/

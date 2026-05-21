@@ -48,6 +48,31 @@ const featuredArticles = nonHomeEntries.slice(0, 3);
       </div>
     </section>
 
+    <section class="info-section">
+      <div class="container">
+        <div class="info-grid">
+          <div class="info-text-block">
+            <h2 class="info-section-title">Modern Data Architecture</h2>
+            <p class="info-text">
+              The modern data ecosystem is moving rapidly away from proprietary data warehouses toward open, modular architectures. By separating compute from storage, organizations can run multiple analytical engines concurrently against a single copy of data, reducing vendor lock-in and minimizing expensive data copies.
+            </p>
+            <p class="info-text">
+              At the center of this shift is the <strong>Data Lakehouse</strong>, enabled by open-source table formats like Apache Iceberg, Delta Lake, and Apache Hudi. These formats bring transaction safety, schema evolution, and time-travel capabilities directly to files stored in object storage.
+            </p>
+          </div>
+          <div class="info-text-block">
+            <h2 class="info-section-title">Semantic Layers &amp; AI</h2>
+            <p class="info-text">
+              As data storage becomes open and standardized, the focus shifts to data management and consumption. The <strong>Semantic Layer</strong> acts as a unified abstraction layer over heterogeneous data sources, providing business users and analytics engines with consistent definitions, security, and governance.
+            </p>
+            <p class="info-text">
+              Simultaneously, the rise of <strong>Generative AI</strong> and Large Language Models (LLMs) requires robust, real-time access to clean organizational data. Technologies like RAG (Retrieval-Augmented Generation) bridge the gap between unstructured knowledge and structured data catalogs, enabling intelligent applications to deliver high-context answers.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     {featuredArticles.length > 0 && (
       <section class="featured-section">
         <div class="container">
@@ -192,6 +217,35 @@ const featuredArticles = nonHomeEntries.slice(0, 3);
     font-weight: 700;
   }
 
+  /* Info Section */
+  .info-section {
+    padding: 5rem 0;
+    border-bottom: 1px dashed var(--color-border);
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+  }
+
+  .info-section-title {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-text-main);
+  }
+
+  .info-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .info-text strong {
+    color: var(--color-text-main);
+  }
+
   /* Featured Section */
   .featured-section {
     padding: 5rem 0;
@@ -253,6 +307,11 @@ const featuredArticles = nonHomeEntries.slice(0, 3);
     }
     
     .stats-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    
+    .info-grid {
       grid-template-columns: 1fr;
       gap: 2.5rem;
     }

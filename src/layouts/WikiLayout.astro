@@ -16,7 +16,7 @@ interface Props {
 const { frontmatter } = Astro.props;
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+<BaseLayout title={frontmatter.title} description={frontmatter.description} isArticle={true}>
   <div class="wiki-container container">
     <aside class="wiki-sidebar-wrapper">
       <WikiSidebar />

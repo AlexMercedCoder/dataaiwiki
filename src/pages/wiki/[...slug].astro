@@ -4,7 +4,6 @@ import WikiLayout from '../../layouts/WikiLayout.astro';
 
 export async function getStaticPaths() {
   const entries = await getCollection('wiki');
-  console.log('WIKI ENTRIES ID MAP:', entries.map(e => e.id));
   return entries.map(entry => {
     // Map "home" to undefined so it serves as the index page at /wiki/
     const slug = entry.id === 'home' ? undefined : entry.id;
