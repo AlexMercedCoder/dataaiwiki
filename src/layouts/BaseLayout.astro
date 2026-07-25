@@ -13,13 +13,13 @@ interface Props {
 
 const { 
   title, 
-  description = "The Data & AI Wiki: A mirror repository of articles on data lakehouse architectures, semantic layers, concepts, and platforms.", 
+  description = "The Data & AI Wiki: An open reference of articles on data lakehouse architectures, semantic layers, concepts, and platforms.", 
   isArticle = false,
   image = "/og-image.png"
 } = Astro.props;
 
 // Ensure we have a valid canonical URL
-const siteUrl = Astro.site ? Astro.site.toString() : 'https://dataaiwiki.netlify.app/';
+const siteUrl = Astro.site ? Astro.site.toString() : 'https://dataaiwiki.com/';
 const canonicalURL = new URL(Astro.url.pathname, siteUrl);
 const imageUrl = new URL(image, siteUrl);
 
@@ -50,6 +50,26 @@ const schema = isArticle
       "url": canonicalURL.toString(),
       "image": imageUrl.toString()
     };
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://alexmerced.com/#person",
+  "name": "Alex Merced",
+  "url": "https://alexmerced.com",
+  "jobTitle": "Head of Developer Relations",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Dremio",
+    "url": "https://www.dremio.com"
+  },
+  "sameAs": [
+    "https://whoisalexmerced.com",
+    "https://alexmerced.com",
+    "https://alexmerceddata.com",
+    "https://www.linkedin.com/in/alexmerced"
+  ]
+};
 ---
 
 <!DOCTYPE html>
@@ -86,6 +106,7 @@ const schema = isArticle
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
   </head>
   <body>
     <!-- Accessibility Skip to Content -->

@@ -248,15 +248,15 @@ function processWiki() {
   let llmsTxt = `# Data & AI Wiki\n\n`;
   llmsTxt += `> Mirror website for AlexMercedCoder's Data and AI Wiki. A collection of articles on lakehouses, semantic layers, concepts, and platforms.\n\n`;
   llmsTxt += `## Core Pages\n\n`;
-  llmsTxt += `- [Home](https://dataaiwiki.netlify.app/wiki/) - Main entry point and directory list.\n`;
-  llmsTxt += `- [Terms](https://dataaiwiki.netlify.app/wiki/terms/) - Complete list of Data & AI terms.\n`;
-  llmsTxt += `- [Individuals](https://dataaiwiki.netlify.app/wiki/individuals/) - Key individuals in the Data & AI space.\n`;
-  llmsTxt += `- [Vendor Platforms](https://dataaiwiki.netlify.app/wiki/vendor-platforms/) - Overview of vendor platforms.\n\n`;
+  llmsTxt += `- [Home](https://dataaiwiki.com/wiki/) - Main entry point and directory list.\n`;
+  llmsTxt += `- [Terms](https://dataaiwiki.com/wiki/terms/) - Complete list of Data & AI terms.\n`;
+  llmsTxt += `- [Individuals](https://dataaiwiki.com/wiki/individuals/) - Key individuals in the Data & AI space.\n`;
+  llmsTxt += `- [Vendor Platforms](https://dataaiwiki.com/wiki/vendor-platforms/) - Overview of vendor platforms.\n\n`;
   llmsTxt += `## Wiki Articles\n\n`;
 
   for (const page of wikiPagesForLLM) {
     const cleanDesc = page.description.replace(/\s+/g, ' ').trim();
-    llmsTxt += `- [${page.title}](https://dataaiwiki.netlify.app/wiki/${page.slug}/) - ${cleanDesc}\n`;
+    llmsTxt += `- [${page.title}](https://dataaiwiki.com/wiki/${page.slug}/) - ${cleanDesc}\n`;
   }
 
   const publicDir = path.resolve('./public');
@@ -269,7 +269,7 @@ function processWiki() {
 
   for (const page of wikiPagesForLLM) {
     llmsFullTxt += `# ${page.title}\n`;
-    llmsFullTxt += `URL: https://dataaiwiki.netlify.app/wiki/${page.slug}/\n`;
+    llmsFullTxt += `URL: https://dataaiwiki.com/wiki/${page.slug}/\n`;
     llmsFullTxt += `Description: ${page.description}\n\n`;
     llmsFullTxt += `${page.content}\n\n`;
     llmsFullTxt += `---\n\n`;
