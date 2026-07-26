@@ -51,6 +51,18 @@ const schema = isArticle
       "image": imageUrl.toString()
     };
 
+const breadcrumbSchema = isArticle
+  ? {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": siteUrl },
+        { "@type": "ListItem", "position": 2, "name": "Wiki", "item": new URL('/wiki/', siteUrl).toString() },
+        { "@type": "ListItem", "position": 3, "name": title, "item": canonicalURL.toString() }
+      ]
+    }
+  : null;
+
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -106,6 +118,7 @@ const personSchema = {
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
     <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
   </head>
   <body>

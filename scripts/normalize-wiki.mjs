@@ -207,9 +207,22 @@ function processWiki() {
         .replace(/[#*`_\-+>]/g, '') // remove markdown symbols
         .replace(/\s+/g, ' ') // collapse multiple spaces
         .trim();
-      description = plainText.length > 160 
-        ? plainText.substring(0, 157) + '...'
-        : plainText;
+      if (plainText.length <= 165) {
+        description = plainText;
+      } else {
+        // Prefer whole sentences within ~165 chars; never cut mid-word.
+        const sentences = plainText.split(/(?<=[.!?])\s+/);
+        let out = sentences[0];
+        for (const s of sentences.slice(1)) {
+          if ((out + ' ' + s).length <= 165) out += ' ' + s;
+          else break;
+        }
+        if (out.length > 170) {
+          // Single long sentence: trim at the last word boundary before ~158 chars.
+          out = out.slice(0, 158).replace(/\s+\S*$/, '').replace(/[,;:]$/, '') + '…';
+        }
+        description = out;
+      }
     }
 
     const frontmatter = {
