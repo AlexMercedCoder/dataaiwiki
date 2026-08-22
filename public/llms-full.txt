@@ -110,7 +110,7 @@ Alex's professional journey spans tech, education, finance, and economics.
 
 ## Publications Catalog
 
-Alex Merced is a prolific author who has written over 30 books covering data engineering, artificial intelligence, economics, and fiction.
+Alex Merced is a prolific author who has written over 63 books covering data engineering, artificial intelligence, economics, and fiction.
 
 ### Data Engineering & Lakehouses
 * **Apache Iceberg: The Definitive Guide** (O'Reilly, co-authored with Jason Hughes): The definitive guide to learning, architecting, and implementing Apache Iceberg.
