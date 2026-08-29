@@ -7,6 +7,8 @@ const links = [
   { label: 'SemanticLakehouse.com', url: 'https://semanticlakehouse.com' },
   { label: 'OpenDataLakehouse.com', url: 'https://opendatalakehouse.com' },
   { label: 'AgenticLakehouse.com', url: 'https://agenticlakehouse.com' },
+  { label: 'OpenAgenticPlatform.com', url: 'https://openagenticplatform.com' },
+  { label: 'AlexMercedAI.com', url: 'https://www.alexmercedai.com' },
   { label: 'OpenLakehouse.help', url: 'https://openlakehouse.help' },
 ];
 
@@ -30,12 +32,22 @@ const currentYear = new Date().getFullYear();
     </div>
     
     <div class="footer-bottom">
+      <p class="footer-newsletter">
+        Two free weekly newsletters from Alex Merced: an AI newsletter on Thursdays and an Apache
+        lakehouse newsletter on Fridays.
+        <a href="https://amdatalakehouse.substack.com" target="_blank" rel="noopener noreferrer">Subscribe on Substack</a>
+      </p>
       <p class="copyright">&copy; {currentYear} Data & AI Wiki. Developed under the Refero Editorial Style.</p>
     </div>
   </div>
 </footer>
 
 <style>
+  .footer-newsletter {
+    margin: 0 0 0.75rem;
+    font-size: 0.9375rem;
+  }
+
   .site-footer {
     border-top: 1px solid var(--color-border);
     background-color: var(--color-canvas-parchment);
