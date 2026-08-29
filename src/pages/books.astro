@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import bookData from '../data/books.json';
+
+const { intro, books, count, totalInCatalog, catalog } = bookData;
+---
+
+<BaseLayout
+  title="Books"
+  description="Books by Alex Merced on data lakehouse architecture, Apache Iceberg, semantic layers, data engineering, and AI, covering the same topics as this wiki at greater length."
+>
+  <main id="main-content" class="books-page">
+    <div class="container">
+      <header class="books-header">
+        <p class="books-eyebrow">Books by Alex Merced</p>
+        <h1>Read further</h1>
+        <p class="books-intro">{intro}</p>
+        <p class="books-meta">
+          {count} of {totalInCatalog} titles.
+          <a href={catalog} target="_blank" rel="noopener noreferrer">See the complete catalog</a>
+        </p>
+      </header>
+
+      <ul class="books-grid" role="list">
+        {books.map((book) => (
+          <li class="book-card">
+            <a class="book-cover" href={book.canonicalPage} target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+              <img src={book.cover} alt="" loading="lazy" decoding="async" />
+            </a>
+            <div class="book-body">
+              <h2>
+                <a href={book.canonicalPage} target="_blank" rel="noopener noreferrer">{book.title}</a>
+              </h2>
+              {book.publisher && <p class="book-publisher">{book.publisher}</p>}
+              <p class="book-description">{book.description}</p>
+              <p class="book-links">
+                <a href={book.canonicalPage} target="_blank" rel="noopener noreferrer">Details</a>
+                <a href={book.amazon} target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
+              </p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .books-page {
+    padding: 3rem 0 4rem;
+  }
+  .books-header {
+    max-width: 46rem;
+    margin-bottom: 3rem;
+  }
+  .books-eyebrow {
+    margin: 0 0 0.5rem;
+    font-size: 0.8125rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted, #6b6b6b);
+  }
+  .books-header h1 {
+    margin: 0 0 1rem;
+  }
+  .books-intro {
+    margin: 0 0 0.75rem;
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+  .books-meta {
+    margin: 0;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted, #6b6b6b);
+  }
+  .books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .book-card {
+    display: grid;
+    grid-template-columns: 6.5rem 1fr;
+    gap: 1.25rem;
+    align-items: start;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-border, #e5e0d5);
+  }
+  .book-cover img {
+    width: 100%;
+    height: auto;
+    border-radius: 2px;
+    box-shadow: 0 2px 10px rgb(0 0 0 / 0.12);
+  }
+  .book-body h2 {
+    margin: 0 0 0.35rem;
+    font-size: 1.0625rem;
+    line-height: 1.35;
+  }
+  .book-publisher {
+    margin: 0 0 0.5rem;
+    font-size: 0.8125rem;
+    color: var(--color-text-muted, #6b6b6b);
+  }
+  .book-description {
+    margin: 0 0 0.75rem;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+  }
+  .book-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 0;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+  @media (max-width: 30rem) {
+    .book-card {
+      grid-template-columns: 5rem 1fr;
+      gap: 1rem;
+    }
+  }
+</style>
