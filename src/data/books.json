@@ -3,7 +3,7 @@
   "source": "https://alexmerced.com/entity/books.json",
   "catalog": "https://books.alexmerced.com/",
   "intro": "The wiki gives you a definition. These books give you the full treatment of the same territory across data and AI.",
-  "totalInCatalog": 65,
+  "totalInCatalog": 66,
   "count": 32,
   "books": [
     {
