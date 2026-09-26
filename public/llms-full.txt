@@ -110,12 +110,12 @@ Alex's professional journey spans tech, education, finance, and economics.
 
 ## Publications Catalog
 
-Alex Merced is a prolific author who has written over 63 books covering data engineering, artificial intelligence, economics, and fiction.
+Alex Merced is a prolific author who has written 77 books covering data engineering, artificial intelligence, economics, and fiction.
 
 ### Data Engineering & Lakehouses
 * **Apache Iceberg: The Definitive Guide** (O'Reilly, co-authored with Jason Hughes): The definitive guide to learning, architecting, and implementing Apache Iceberg.
 * **Architecting an Apache Iceberg Lakehouse** (Manning): Focused on architectural patterns and production strategies for Iceberg.
-* **Apache Polaris: The Definitive Guide** (Packt/O'Reilly): Comprehensive guide to using the Polaris open-source catalog.
+* **Apache Polaris: The Definitive Guide** (O'Reilly, co-authored with Andrew Madson): Comprehensive guide to using the Polaris open-source catalog.
 * **The Book on Using Apache Iceberg with Python** (Self-published): Practical guide to interacting with Iceberg tables using Python libraries like PyIceberg, PySpark, and PyFlink.
 * **The Open Source Lakehouse: Architecting the Decoupled Analytical Foundation** (Self-published): Architectural principles of building an open, decoupled analytics stack.
 
@@ -136,6 +136,7 @@ Alex Merced is a prolific author who has written over 63 books covering data eng
 * **The AI Lakehouse: Architecting Data Platforms for AI** (Self-published): Reimagining the lakehouse storage layer specifically to serve high-scale machine learning and AI inference.
 * **AI Application Architecture: Patterns for Building Intelligent Systems** (Self-published): Software engineering design patterns for AI-native applications.
 * **The Economics of AI: Cost, Latency, and Infrastructure Tradeoffs** (Self-published): Optimizing AI compute costs and latency across different deployment models.
+* **Building the Software Factory: Scaling Reliable AI Coding Practices from Individual Developers to Teams** (Packt, co-authored with Benedikt Stemmildt): Context engineering, AI-TDD, and harness design for turning AI coding agents into a dependable, team-wide software factory.
 * **The Economics of Labor in the AI Era** (Self-published): Assessing the socio-economic impacts of automated workflows on the workforce.
 
 ### Economics
@@ -144,6 +145,7 @@ Alex Merced is a prolific author who has written over 63 books covering data eng
 ### Fiction Novels
 * **The Semantic Rebellion** (Self-published): A science-fiction novel following a data engineer navigating a world ruled by centralized algorithmic control.
 * **The Emperors of A.I. Valley** (Self-published): High-stakes power struggles and corporate intrigue inside the race for Artificial General Intelligence (AGI).
+* **The Worlds Between Home** (Self-published, 10-book series): A family-centered political space opera that begins with *The Children of Damaris* and follows one family across the worlds they flee to.
 * **Embers of Claim** (Self-published): The opening book of a fantasy trilogy exploring world-building, power dynamics, and ancient legacies.
 
 ---
