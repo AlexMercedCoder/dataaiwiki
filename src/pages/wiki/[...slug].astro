@@ -1,6 +1,8 @@
 ---
 import { getCollection, render } from 'astro:content';
 import WikiLayout from '../../layouts/WikiLayout.astro';
+import { practicalExamples } from '../../data/practical-examples';
+import { deepTermSlugs } from '../../data/deep-term-slugs';
 
 export async function getStaticPaths() {
   const entries = await getCollection('wiki');
@@ -16,8 +18,14 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+const practical = practicalExamples[entry.id];
 ---
 
 <WikiLayout frontmatter={entry.data}>
   <Content />
+  {entry.id !== 'home' && <aside style="margin-top:2rem;padding:1.25rem;border:1px solid #b7c6d4;border-radius:8px;">
+    {practical && <><h2>Example</h2><p>{practical.example}</p></>}
+    <h2>Go deeper</h2>
+    <p>{deepTermSlugs.includes(entry.id) ? <a href={`https://dataengnr.com/terms/${entry.id}/`}>Read the in-depth DataEngnr guide →</a> : <a href="https://datalakehouse.help/">Browse hands-on data and AI guides →</a>}</p>
+  </aside>}
 </WikiLayout>
