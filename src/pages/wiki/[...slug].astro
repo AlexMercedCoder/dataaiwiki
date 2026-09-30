@@ -19,9 +19,21 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 const practical = practicalExamples[entry.id];
+
+// Listing pages carry the DefinedTermSet; every other page is one DefinedTerm.
+const listingIds = new Set(['home', 'terms']);
+const sectionIds = new Set(['individuals', 'vendor-platforms']);
+const kind = listingIds.has(entry.id) ? 'termset' : sectionIds.has(entry.id) ? undefined : 'term';
+const siteUrl = Astro.site ? Astro.site.toString() : 'https://dataaiwiki.com/';
+const terms = entry.id === 'terms'
+  ? (await getCollection('wiki'))
+      .filter(e => !listingIds.has(e.id) && !sectionIds.has(e.id))
+      .sort((a, b) => a.data.title.localeCompare(b.data.title))
+      .map(e => ({ name: e.data.title, url: new URL(`/wiki/${e.id}/`, siteUrl).toString() }))
+  : undefined;
 ---
 
-<WikiLayout frontmatter={entry.data}>
+<WikiLayout frontmatter={entry.data} kind={kind} terms={terms}>
   <Content />
   {entry.id !== 'home' && <aside style="margin-top:2rem;padding:1.25rem;border:1px solid #b7c6d4;border-radius:8px;">
     {practical && <><h2>Example</h2><p>{practical.example}</p></>}

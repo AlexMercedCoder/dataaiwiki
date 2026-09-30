@@ -11,12 +11,14 @@ interface Frontmatter {
 
 interface Props {
   frontmatter: Frontmatter;
+  kind?: 'term' | 'termset';
+  terms?: { name: string; url: string }[];
 }
 
-const { frontmatter } = Astro.props;
+const { frontmatter, kind, terms } = Astro.props;
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description} isArticle={true}>
+<BaseLayout title={frontmatter.title} description={frontmatter.description} isArticle={true} kind={kind} terms={terms}>
   <div class="wiki-container container">
     <aside class="wiki-sidebar-wrapper">
       <WikiSidebar />
