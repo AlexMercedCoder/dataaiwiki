@@ -1,0 +1,65 @@
+---
+import network from '../../network/network.json';
+
+const cta = network.cta;
+---
+
+{cta && (
+  <section class="cta-strip" aria-labelledby="cta-strip-heading">
+    <div class="cta-strip-inner container">
+      <h2 id="cta-strip-heading" class="cta-strip-heading">{cta.heading}</h2>
+      <div class="cta-strip-links">
+        {cta.links.map(link => (
+          <a href={link.url} class="cta-strip-link" data-network-event={link.event}>
+            {link.label}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+  .cta-strip {
+    border-top: 1px solid var(--color-border);
+    background-color: var(--color-pure-white);
+    padding: 2rem 0;
+  }
+
+  .cta-strip-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem 2rem;
+  }
+
+  .cta-strip-heading {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 1.5rem;
+  }
+
+  .cta-strip-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .cta-strip-link {
+    color: var(--color-text-main);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-canvas-parchment);
+    transition: all 0.2s ease;
+  }
+
+  .cta-strip-link:hover {
+    color: var(--color-alert-crimson);
+    border-color: var(--color-alert-crimson);
+  }
+</style>

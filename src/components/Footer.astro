@@ -1,52 +1,28 @@
 ---
-const links = [
-  { label: 'AlexMerced.com', url: 'https://alexmerced.com' },
-  { label: 'WhoIsAlexMerced.com', url: 'https://whoisalexmerced.com' },
-  { label: 'AlexMercedMedia.com', url: 'https://alexmercedmedia.com' },
-  { label: 'Books by Alex Merced', url: 'https://books.alexmerced.com' },
-  { label: 'Branding.AlexMerced.com', url: 'https://branding.alexmerced.com' },
-  { label: 'AlexMercedCoder.dev', url: 'https://alexmercedcoder.dev' },
-  { label: 'AlexMercedAI.com', url: 'https://www.alexmercedai.com' },
-  { label: 'AlexMercedData.com', url: 'https://alexmerceddata.com' },
-  { label: 'Resources.AlexMerced.com', url: 'https://resources.alexmerced.com' },
-  { label: 'OpenDataLakehouse.com', url: 'https://opendatalakehouse.com' },
-  { label: 'OpenLakehouse.AlexMerced.com', url: 'https://openlakehouse.alexmerced.com' },
-  { label: 'SemanticLakehouse.com', url: 'https://semanticlakehouse.com' },
-  { label: 'AgenticLakehouse.com', url: 'https://agenticlakehouse.com' },
-  { label: 'AgenticAnalyticsNow.com', url: 'https://agenticanalyticsnow.com' },
-  { label: 'OpenAgenticPlatform.com', url: 'https://openagenticplatform.com' },
-  { label: 'DataEngnr.com', url: 'https://dataengnr.com' },
-  { label: 'DataLakehouse.help', url: 'https://datalakehouse.help' },
-  { label: 'IcebergLakehouse.com', url: 'https://iceberglakehouse.com' },
-  { label: 'DataLakehouseHub.com', url: 'https://datalakehousehub.com' },
-  { label: 'Tuts.AlexMercedCoder.dev', url: 'https://tuts.alexmercedcoder.dev' },
-  { label: 'WeekOfData.com', url: 'https://weekofdata.com' },
-  { label: 'AlexMerced.blog', url: 'https://alexmerced.blog' },
-  { label: 'IngestThis.com', url: 'https://ingestthis.com' },
-  { label: 'GrokOverflow.com', url: 'https://grokoverflow.com' },
-  { label: 'AlexMercedLibertarian.com', url: 'https://alexmercedlibertarian.com' },
-  { label: 'AlexMercedMusic.com', url: 'https://alexmercedmusic.com' },
-  { label: 'D6Storyteller.AlexMerced.com', url: 'https://d6storyteller.alexmerced.com' },
-];
+import network from '../../network/network.json';
+
+const { groups, allSitesUrl, allSitesLabel } = network.footer;
 
 const currentYear = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
   <div class="footer-container container">
-    <div class="footer-links-grid">
-      {links.map(link => (
-        <a 
-          href={link.url} 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          class="footer-link"
-        >
-          {link.label}
-          <span class="sr-only">(opens in a new tab)</span>
-        </a>
+    <nav class="footer-groups" aria-label="Alex Merced network">
+      {groups.map(group => (
+        <div class="footer-group">
+          <h2 class="footer-group-title">{group.title}</h2>
+          <div class="footer-links-grid">
+            {group.links.map(link => (
+              <a href={link.url} class="footer-link">{link.title}</a>
+            ))}
+          </div>
+        </div>
       ))}
-    </div>
+      <p class="footer-all-sites">
+        <a href={allSitesUrl} class="footer-link">{allSitesLabel}</a>
+      </p>
+    </nav>
     
     <div class="footer-bottom">
       <p class="footer-newsletter">
@@ -76,6 +52,24 @@ const currentYear = new Date().getFullYear();
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
+  }
+
+  .footer-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .footer-group-title {
+    margin: 0 0 0.75rem;
+    padding: 0;
+    border: 0;
+    font-size: 1.1rem;
+  }
+
+  .footer-all-sites {
+    margin: 0;
+    display: flex;
   }
 
   .footer-links-grid {

@@ -1,7 +1,10 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import CtaStrip from '../components/CtaStrip.astro';
 import SearchBox from '../components/SearchBox.astro';
+import networkHead from '../../network/network-head.html?raw';
+import network from '../../network/network.json';
 import '../styles/global.css';
 
 interface Props {
@@ -9,13 +12,19 @@ interface Props {
   description?: string;
   isArticle?: boolean;
   image?: string;
+  /** 'term' marks a single definition page; 'termset' marks a glossary listing. */
+  kind?: 'term' | 'termset';
+  /** Terms to list in the DefinedTermSet on a glossary listing page. */
+  terms?: { name: string; url: string }[];
 }
 
-const { 
-  title, 
-  description = "The Data & AI Wiki: An open reference of articles on data lakehouse architectures, semantic layers, concepts, and platforms.", 
+const {
+  title,
+  description = "Alex Merced's Data & AI Wiki: short definitions of AI and data terms, from agents and retrieval to semantic layers and lakehouses.",
   isArticle = false,
-  image = "/og-image.png"
+  image = "/og-image.png",
+  kind,
+  terms,
 } = Astro.props;
 
 // Ensure we have a valid canonical URL
@@ -26,8 +35,45 @@ const imageUrl = new URL(image, siteUrl);
 // Resolve the full title to avoid double appending the brand name
 const fullTitle = title.includes("Data & AI Wiki") ? title : `${title} | Data & AI Wiki`;
 
+const author = { "@id": "https://alexmerced.com/#alexmerced" };
+const termSetId = new URL('/#termset', siteUrl).toString();
+const websiteRef = { "@type": "WebSite", "name": "Data & AI Wiki", "url": siteUrl };
+
+const termSet = {
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  "@id": termSetId,
+  "name": "Data & AI Wiki",
+  "description": "Short definitions of AI and data terms by Alex Merced.",
+  "url": new URL('/wiki/terms/', siteUrl).toString(),
+  "creator": author,
+  ...(terms && terms.length
+    ? { "hasDefinedTerm": terms.map(t => ({ "@type": "DefinedTerm", "name": t.name, "url": t.url })) }
+    : {}),
+};
+
 // Create JSON-LD schema
-const schema = isArticle
+const schema = kind === 'term'
+  ? {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": fullTitle,
+      "description": description,
+      "url": canonicalURL.toString(),
+      "image": imageUrl.toString(),
+      "inLanguage": "en",
+      "author": author,
+      "isPartOf": websiteRef,
+      "mainEntity": {
+        "@type": "DefinedTerm",
+        "@id": `${canonicalURL.toString()}#term`,
+        "name": title,
+        "description": description,
+        "url": canonicalURL.toString(),
+        "inDefinedTermSet": { "@id": termSetId },
+      },
+    }
+  : isArticle
   ? {
       "@context": "https://schema.org",
       "@type": "TechArticle",
@@ -36,11 +82,8 @@ const schema = isArticle
       "url": canonicalURL.toString(),
       "image": imageUrl.toString(),
       "inLanguage": "en",
-      "isPartOf": {
-        "@type": "WebSite",
-        "name": "Data & AI Wiki",
-        "url": siteUrl
-      }
+      "author": author,
+      "isPartOf": websiteRef
     }
   : {
       "@context": "https://schema.org",
@@ -48,7 +91,8 @@ const schema = isArticle
       "name": fullTitle,
       "description": description,
       "url": canonicalURL.toString(),
-      "image": imageUrl.toString()
+      "image": imageUrl.toString(),
+      "author": author
     };
 
 const breadcrumbSchema = isArticle
@@ -62,29 +106,6 @@ const breadcrumbSchema = isArticle
       ]
     }
   : null;
-
-const personSchema = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "@id": "https://alexmerced.com/#alexmerced",
-  "name": "Alex Merced",
-  "url": "https://alexmerced.com",
-  "jobTitle": "Head of Developer Relations",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Dremio",
-    "url": "https://www.dremio.com"
-  },
-  "sameAs": [
-    "https://branding.alexmerced.com",
-    "https://books.alexmerced.com",
-    "https://alexmercedcoder.dev",
-    "https://whoisalexmerced.com",
-    "https://alexmerced.com",
-    "https://alexmerceddata.com",
-    "https://www.linkedin.com/in/alexmerced"
-  ]
-};
 ---
 
 <!DOCTYPE html>
@@ -112,17 +133,23 @@ const personSchema = {
     <meta property="og:description" content={description} />
     <meta property="og:image" content={imageUrl} />
 
+    <meta property="og:site_name" content="Data & AI Wiki" />
+
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={canonicalURL} />
-    <meta property="twitter:title" content={fullTitle} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={imageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content={network.twitterSite} />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
-    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+    {kind === 'termset' && <script type="application/ld+json" set:html={JSON.stringify(termSet)} />}
+
+    <!-- Network head: GA4, event listener, canonical Person JSON-LD (generated) -->
+    <Fragment set:html={networkHead} />
   </head>
   <body>
     <!-- Accessibility Skip to Content -->
@@ -130,6 +157,7 @@ const personSchema = {
 
     <Header />
     <slot />
+    <CtaStrip />
     <Footer />
     <SearchBox />
     <!-- WebMCP: read-only tools for browser AI agents. Progressive enhancement;
