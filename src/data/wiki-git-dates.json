@@ -1,0 +1,1662 @@
+{
+  "generatedBy": "scripts/build-wiki-git-dates.mjs",
+  "source": "wiki",
+  "files": {
+    "ACID.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "AI-ism.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "ANN-Approximate-Nearest-Neighbor.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "API-Application-Programming-Interface.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "API-Gateway.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "AVX-512.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "AWS-Amazon-Web-Services.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "AWS-Glue.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Active-Learning.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Ad-hoc-Query.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Agentic-AI.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Aggregation.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Airflow.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Alex-Merced.md": {
+      "modified": "2026-09-26T11:24:03-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Analytics-Engineer.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Anomaly-Detection.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Apache-Hudi.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Apache-Iceberg.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Apache-Polaris.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Apache-Spark-Structured-Streaming.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Apache-Spark.md": {
+      "modified": "2026-05-21T16:21:03-04:00",
+      "created": "2026-05-21T16:21:03-04:00"
+    },
+    "Artificial-Intelligence.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Artificial-Neural-Network.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Athena.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Attention-Mechanism.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Autoencoder.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Avro.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Azure-Blob-Storage.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Azure-Microsoft-Azure.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "BASE.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "BI-Business-Intelligence.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Backpropagation.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Bag-of-Words.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Batch-Size.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Bfloat16.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Bias-Variance-Tradeoff.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "BigQuery.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Blob-Storage.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Boosting.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Bootstrap-Aggregating-Bagging.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Business-Glossary.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "CDC-Change-Data-Capture.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "CDN-Content-Delivery-Network.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Cache.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Catalog.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Classification.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "ClickHouse.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Cloud-Storage.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Clustering-Algorithm.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Clustering.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Colocation.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Columnar-Database.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Compaction-Job.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Compaction.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Compute-Storage-Separation.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Computer-Cluster.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Computer-Vision.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Consensus-Protocol.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Containerization.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Context-Window.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Copy-on-Write.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Correlation.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Cosine-Similarity.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Cross-Validation.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "DAG-Directed-Acyclic-Graph.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "DBT-Data-Build-Tool.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Dagster.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Dashboard.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Data-Analyst.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Data-Asset.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Data-Catalog.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Data-Cube.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Data-Democratization.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Data-Engineer.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Data-Fabric.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Data-Federation.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Data-Governance.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Data-Ingestion.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Data-Lake.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Data-Lakehouse-Catalog.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Data-Lakehouse.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Data-Lineage-Graph.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Data-Lineage.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Data-Marketplace.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Data-Mart.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Data-Mesh.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Data-Modeling.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Data-Pipeline.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Data-Quality.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Data-Refresh.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Data-Retention.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Data-Science.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Data-Scientist.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Data-Sharing.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Data-Silo.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Data-Source.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Data-Sovereignty.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Data-Steward.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Data-Stewardship.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Data-Transformation.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Data-Virtualization.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Data-Warehouse.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Database-Index.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Databricks.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Decoder.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Deep-Learning.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Deep-Neural-Network.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Delta-Lake.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Denormalization.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Differentiable-Programming.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Dimension-Table.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Dimensional-Modeling.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Distributed-Database.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Distributed-Query.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Docker.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Document-Store.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Dot-Product.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Double-bracket-link.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Dremio.md": {
+      "modified": "2026-05-21T16:21:03-04:00",
+      "created": "2026-05-21T16:21:03-04:00"
+    },
+    "DuckDB.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "ELT-Extract-Load-Transform.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "ETL-Extract-Transform-Load.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "ETL-Metadata.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Embedding-Layer.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Embedding-Model.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Embedding.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Encoder.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Entity-Resolution.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Epoch.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Euclidean-Distance.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Event-driven-Architecture.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Execution-Plan.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Exploratory-Data-Analysis-EDA.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "F1-Score.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Fact-Table.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "False-Negative.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "False-Positive.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Feature-Engineering.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Feature-Selection.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Feature-Store.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Feature-Vector.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Federated-Query-Engine.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Few-Shot-Learning.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Fine-tuning.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Fivetran.md": {
+      "modified": "2026-05-21T16:21:03-04:00",
+      "created": "2026-05-21T16:21:03-04:00"
+    },
+    "Flink-Apache-Flink.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Fully-Connected-Layer.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "GCP-Google-Cloud-Platform.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "GPT-Generative-Pre-trained-Transformer.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "GPU-Graphics-Processing-Unit.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Generative-AI.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Generative-Adversarial-Network-GAN.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Glowmorphism.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Google-Cloud-Storage.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Gradient-Descent.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Graph-Database.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "GraphQL.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Guardrails.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "HNSW-Hierarchical-Navigable-Small-World.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Hallucination.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Heuristic.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Hidden-Partitioning.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Hive-Metastore.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Home.md": {
+      "modified": "2026-05-21T15:58:27-04:00",
+      "created": "2026-05-21T15:39:05-04:00"
+    },
+    "Hot-Tier.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Hudi-Timeline.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Hyperparameter.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "IAM-Identity-and-Access-Management.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "IVF-FLAT.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "IaC-Infrastructure-as-Code.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Iceberg-Manifest.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Iceberg-REST-Catalog.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "In-database-Analytics.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "In-memory-Database.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Incremental-Load.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Indexing.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Individuals.md": {
+      "modified": "2026-05-21T15:45:27-04:00",
+      "created": "2026-05-21T15:45:27-04:00"
+    },
+    "Inference.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Internet-of-Things-IoT-Data.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "JSON-JavaScript-Object-Notation.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "JSON-LD.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "K-Means-Clustering.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "K-Nearest-Neighbors.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "KPI-Key-Performance-Indicator.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Kafka-Apache-Kafka.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Kafka-Connect.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Key-Value-Store.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Kubernetes.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "LLM-Prompting.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Lakehouse-Catalog.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Lakehouse-Storage.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "LangChain.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Large-Language-Model.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Latent-Space.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Linear-Regression.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Llama.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "LlamaIndex.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Load-Balancer.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Logistic-Regression.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Loss-Function.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Machine-Learning.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Manifest-File.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Manifest-List.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Materialized-View-Refresh.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Materialized-View.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Merge-on-Read.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T16:02:34-04:00"
+    },
+    "Monte-Carlo.md": {
+      "modified": "2026-05-21T16:21:03-04:00",
+      "created": "2026-05-21T16:21:03-04:00"
+    },
+    "Open-Source.md": {
+      "modified": "2026-05-21T16:21:03-04:00",
+      "created": "2026-05-21T16:21:03-04:00"
+    },
+    "Project-Nessie.md": {
+      "modified": "2026-05-21T16:21:03-04:00",
+      "created": "2026-05-21T16:21:03-04:00"
+    },
+    "Shawn-Gordon.md": {
+      "modified": "2026-05-21T14:33:21-07:00",
+      "created": "2026-05-21T14:33:21-07:00"
+    },
+    "Snowflake.md": {
+      "modified": "2026-05-21T16:21:03-04:00",
+      "created": "2026-05-21T16:21:03-04:00"
+    },
+    "Terms.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/ACID.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/AI-ism.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/ANN-Approximate-Nearest-Neighbor.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/API-Application-Programming-Interface.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/API-Gateway.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/AVX-512.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/AWS-Amazon-Web-Services.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/AWS-Glue.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Active-Learning.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Ad-hoc-Query.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Agentic-AI.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Aggregation.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Airflow.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Analytics-Engineer.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Anomaly-Detection.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Apache-Hudi.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Apache-Iceberg.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Apache-Polaris.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Apache-Spark-Structured-Streaming.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Artificial-Intelligence.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Artificial-Neural-Network.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Athena.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Attention-Mechanism.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Autoencoder.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Avro.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Azure-Blob-Storage.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Azure-Microsoft-Azure.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/BASE.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/BI-Business-Intelligence.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Backpropagation.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Bag-of-Words.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Batch-Size.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Bfloat16.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Bias-Variance-Tradeoff.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/BigQuery.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Blob-Storage.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Boosting.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Bootstrap-Aggregating-Bagging.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Business-Glossary.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/CDC-Change-Data-Capture.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/CDN-Content-Delivery-Network.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Cache.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Catalog.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Classification.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/ClickHouse.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Cloud-Storage.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Clustering-Algorithm.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Clustering.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Colocation.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Columnar-Database.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Compaction-Job.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Compaction.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Compute-Storage-Separation.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Computer-Cluster.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Computer-Vision.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Consensus-Protocol.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Containerization.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Context-Window.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Copy-on-Write.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Correlation.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Cosine-Similarity.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Cross-Validation.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/DAG-Directed-Acyclic-Graph.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/DBT-Data-Build-Tool.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Dagster.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Dashboard.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Data-Analyst.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Data-Asset.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Data-Catalog.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Data-Cube.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Data-Democratization.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Data-Engineer.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Data-Fabric.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Data-Federation.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Data-Governance.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Data-Ingestion.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Data-Lake.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Data-Lakehouse-Catalog.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Data-Lakehouse.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Data-Lineage-Graph.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Data-Lineage.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Data-Marketplace.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Data-Mart.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Data-Mesh.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Data-Modeling.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Data-Pipeline.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Data-Quality.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Data-Refresh.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Data-Retention.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Data-Science.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Data-Scientist.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Data-Sharing.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Data-Silo.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Data-Source.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Data-Sovereignty.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Data-Steward.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Data-Stewardship.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Data-Transformation.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Data-Virtualization.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Data-Warehouse.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Database-Index.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Databricks.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Decoder.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Deep-Learning.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Deep-Neural-Network.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Delta-Lake.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Denormalization.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Differentiable-Programming.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Dimension-Table.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Dimensional-Modeling.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Distributed-Database.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Distributed-Query.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Docker.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Document-Store.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Dot-Product.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Double-bracket-link.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/DuckDB.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/ELT-Extract-Load-Transform.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/ETL-Extract-Transform-Load.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/ETL-Metadata.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Embedding-Layer.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Embedding-Model.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Embedding.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Encoder.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Entity-Resolution.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Epoch.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Euclidean-Distance.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Event-driven-Architecture.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Execution-Plan.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Exploratory-Data-Analysis-EDA.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/F1-Score.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Fact-Table.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/False-Negative.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/False-Positive.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Feature-Engineering.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Feature-Selection.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Feature-Store.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Feature-Vector.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Federated-Query-Engine.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Few-Shot-Learning.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Fine-tuning.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Flink-Apache-Flink.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Fully-Connected-Layer.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/GCP-Google-Cloud-Platform.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/GPT-Generative-Pre-trained-Transformer.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/GPU-Graphics-Processing-Unit.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Generative-AI.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Generative-Adversarial-Network-GAN.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Glowmorphism.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Google-Cloud-Storage.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Gradient-Descent.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Graph-Database.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/GraphQL.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Guardrails.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/HNSW-Hierarchical-Navigable-Small-World.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Hallucination.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Heuristic.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Hidden-Partitioning.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Hive-Metastore.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Hot-Tier.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Hudi-Timeline.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Hyperparameter.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/IAM-Identity-and-Access-Management.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/IVF-FLAT.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/IaC-Infrastructure-as-Code.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Iceberg-Manifest.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Iceberg-REST-Catalog.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/In-database-Analytics.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/In-memory-Database.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Incremental-Load.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Indexing.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Inference.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Internet-of-Things-IoT-Data.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/JSON-JavaScript-Object-Notation.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/JSON-LD.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/K-Means-Clustering.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/K-Nearest-Neighbors.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/KPI-Key-Performance-Indicator.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Kafka-Apache-Kafka.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Kafka-Connect.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Key-Value-Store.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Kubernetes.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/LLM-Prompting.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Lakehouse-Catalog.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Lakehouse-Storage.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/LangChain.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Large-Language-Model.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Latent-Space.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Linear-Regression.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Llama.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/LlamaIndex.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Load-Balancer.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Logistic-Regression.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Loss-Function.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Machine-Learning.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Manifest-File.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Manifest-List.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Materialized-View-Refresh.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Materialized-View.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Terms/Merge-on-Read.md": {
+      "modified": "2026-05-21T16:02:34-04:00",
+      "created": "2026-05-21T15:58:27-04:00"
+    },
+    "Trino.md": {
+      "modified": "2026-05-21T16:21:03-04:00",
+      "created": "2026-05-21T16:21:03-04:00"
+    },
+    "Vendor-Platforms.md": {
+      "modified": "2026-05-21T16:21:03-04:00",
+      "created": "2026-05-21T15:41:10-04:00"
+    }
+  }
+}

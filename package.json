@@ -7,7 +7,8 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "sync:wiki": "rm -rf ./wiki-raw ./src/content/wiki && git clone --depth=1 https://github.com/AlexMercedCoder/dataaiwiki.wiki.git ./wiki-raw",
+    "sync:wiki": "rm -rf ./wiki-raw ./src/content/wiki && git clone https://github.com/AlexMercedCoder/dataaiwiki.wiki.git ./wiki-raw",
+    "dates": "node ./scripts/build-wiki-git-dates.mjs",
     "normalize:wiki": "node ./scripts/normalize-wiki.mjs",
     "build:astro": "astro build",
     "index:search": "pagefind --site dist",

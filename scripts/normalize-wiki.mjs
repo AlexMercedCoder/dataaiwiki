@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { wikiDates } from './wiki-git-dates.mjs';
 
 const localWikiDir = path.resolve('./wiki');
 const rawWikiDir = path.resolve('./wiki-raw');
@@ -162,6 +163,12 @@ function processWiki() {
   // Copy all assets
   copyAssets();
 
+  // Real last-modified dates per wiki file (P5.1), for sitemap <lastmod>.
+  const dates = wikiDates(rawDir);
+  const lastmodByPath = {};
+  let newestDate = null;
+  console.log(`Wiki dates source: ${dates.source}`);
+
   const allFiles = getFiles(rawDir);
   const mdFiles = allFiles.filter(file => path.extname(file).toLowerCase() === '.md');
 
@@ -268,6 +275,13 @@ function processWiki() {
       updatedFromWiki: true
     };
 
+    const modified = dates.files[relativePath.replace(/\\/g, '/')]?.modified;
+    if (modified) {
+      const day = new Date(modified).toISOString().slice(0, 10);
+      lastmodByPath[slug === 'home' ? '/wiki/' : `/wiki/${slug}/`] = day;
+      if (!newestDate || day > newestDate) newestDate = day;
+    }
+
     const destFilePath = path.join(contentDir, `${slug}.md`);
     fs.mkdirSync(path.dirname(destFilePath), { recursive: true });
     
@@ -287,6 +301,12 @@ function processWiki() {
 
     pagesProcessed++;
   }
+
+  // The homepage lists every wiki entry, so it changes with the newest one.
+  // Pages with no known date are left out and get no <lastmod>.
+  if (newestDate) lastmodByPath['/'] = newestDate;
+  fs.writeFileSync(path.resolve('./src/data/wiki-lastmod.json'), JSON.stringify(lastmodByPath, null, 2) + '\n', 'utf-8');
+  console.log(`Wiki lastmod entries: ${Object.keys(lastmodByPath).length}`);
 
   // Sort articles alphabetically
   wikiPagesForLLM.sort((a, b) => a.title.localeCompare(b.title));
