@@ -17,7 +17,7 @@ A set of properties (Atomicity, Consistency, Isolation, Durability) that guarant
 
 # Active Learning
 URL: https://dataaiwiki.com/wiki/active-learning/
-Description: A semisupervised machine learning paradigm where the algorithm selects which unlabeled data points it needs labeled next to improve training efficiency.
+Description: A semi-supervised machine learning paradigm where the algorithm selects which unlabeled data points it needs labeled next to improve training efficiency.
 
 A semi-supervised machine learning paradigm where the algorithm selects which unlabeled data points it needs labeled next to improve training efficiency.
 
@@ -28,7 +28,7 @@ A semi-supervised machine learning paradigm where the algorithm selects which un
 
 # Ad-hoc Query
 URL: https://dataaiwiki.com/wiki/ad-hoc-query/
-Description: A dynamic, nonpreplanned query created ondemand to answer a specific, onetime business question.
+Description: A dynamic, non-preplanned query created on-demand to answer a specific, one-time business question.
 
 A dynamic, non-preplanned query created on-demand to answer a specific, one-time business question. Ad-hoc queries are commonly used in business intelligence and data exploration.
 
@@ -72,7 +72,7 @@ A term describing clichéd, repetitive, or sterile phrasing commonly generated b
 
 # Airflow
 URL: https://dataaiwiki.com/wiki/airflow/
-Description: An opensource platform developed by Apache to programmatically author, schedule, and monitor workflows.
+Description: An open-source platform developed by Apache to programmatically author, schedule, and monitor workflows.
 
 An open-source platform developed by Apache to programmatically author, schedule, and monitor workflows. It represents workflows as Directed Acyclic Graphs (DAGs), facilitating complex data orchestration tasks.
 
@@ -183,7 +183,7 @@ A professional role that bridges the gap between data engineering and data analy
 
 # ANN (Approximate Nearest Neighbor)
 URL: https://dataaiwiki.com/wiki/ann-approximate-nearest-neighbor/
-Description: A class of algorithms designed to search for vectors in highdimensional space that are close to a query vector.
+Description: A class of algorithms designed to search for vectors in high-dimensional space that are close to a query vector.
 
 A class of algorithms designed to search for vectors in high-dimensional space that are close to a query vector. Unlike exact search, ANN trades a small amount of accuracy for massive gains in query speed, making it essential for large-scale similarity search.
 
@@ -205,7 +205,7 @@ The identification of rare items, events, or observations that raise suspicions 
 
 # Apache Hudi
 URL: https://dataaiwiki.com/wiki/apache-hudi/
-Description: An opensource transactional data lakehouse table format that provides features like upserts, deletes, and incremental data processing pipelines on top of…
+Description: An open-source transactional data lakehouse table format that provides features like upserts, deletes, and incremental data processing pipelines on top of…
 
 An open-source transactional data lakehouse table format that provides features like upserts, deletes, and incremental data processing pipelines on top of cloud object storage.
 
@@ -216,7 +216,7 @@ An open-source transactional data lakehouse table format that provides features 
 
 # Apache Iceberg
 URL: https://dataaiwiki.com/wiki/apache-iceberg/
-Description: An opensource, highperformance transactional table format designed for massive analytic datasets.
+Description: An open-source, high-performance transactional table format designed for massive analytic datasets.
 
 An open-source, high-performance transactional table format designed for massive analytic datasets. It enables engines like Spark, Trino, Flink, and Dremio to work safely and concurrently with a single copy of data using SQL behavior.
 
@@ -227,7 +227,7 @@ An open-source, high-performance transactional table format designed for massive
 
 # Apache Polaris
 URL: https://dataaiwiki.com/wiki/apache-polaris/
-Description: An opensource metadata catalog for data lakehouses that supports the Apache Iceberg table format.
+Description: An open-source metadata catalog for data lakehouses that supports the Apache Iceberg table format.
 
 An open-source metadata catalog for data lakehouses that supports the Apache Iceberg table format. Polaris provides centralized access control, cross-engine credential vending, and multi-tenant security.
 
@@ -238,7 +238,7 @@ An open-source metadata catalog for data lakehouses that supports the Apache Ice
 
 # Apache Spark
 URL: https://dataaiwiki.com/wiki/apache-spark/
-Description: Apache Spark is a popular opensource, distributed generalpurpose clustercomputing framework.
+Description: Apache Spark is a popular open-source, distributed general-purpose cluster-computing framework.
 
 Apache Spark is a popular open-source, distributed general-purpose cluster-computing framework. It provides a unified engine for large-scale data processing, supporting batch processing, real-time streaming, machine learning, and SQL queries.
 
@@ -260,7 +260,7 @@ Spark is widely deployed in pipelines to ingest, clean, transform, and model dat
 
 # Apache Spark Structured Streaming
 URL: https://dataaiwiki.com/wiki/apache-spark-structured-streaming/
-Description: A scalable and faulttolerant stream processing engine built on the Spark SQL engine, allowing streaming queries to be expressed like batch queries.
+Description: A scalable and fault-tolerant stream processing engine built on the Spark SQL engine, allowing streaming queries to be expressed like batch queries.
 
 A scalable and fault-tolerant stream processing engine built on the Spark SQL engine, allowing streaming queries to be expressed like batch queries.
 
@@ -304,7 +304,7 @@ The simulation of human intelligence processes by machines, especially computer 
 
 # Artificial Neural Network
 URL: https://dataaiwiki.com/wiki/artificial-neural-network/
-Description: A computing system modeled after the human brain's neural structure, containing layers of interconnected nodes used to solve nonlinear learning problems.
+Description: A computing system modeled after the human brain's neural structure, containing layers of interconnected nodes used to solve non-linear learning problems.
 
 A computing system modeled after the human brain's neural structure, containing layers of interconnected nodes used to solve non-linear learning problems.
 
@@ -348,7 +348,7 @@ A type of unsupervised artificial neural network used to learn efficient data co
 
 # Avro
 URL: https://dataaiwiki.com/wiki/avro/
-Description: Apache Avro is a roworiented data serialization system that provides rich data structures and a compact, fast, binary data format.
+Description: Apache Avro is a row-oriented data serialization system that provides rich data structures and a compact, fast, binary data format.
 
 Apache Avro is a row-oriented data serialization system that provides rich data structures and a compact, fast, binary data format. It uses schemas defined in JSON, making it ideal for event streaming architectures like Kafka.
 
@@ -458,7 +458,7 @@ A hyperparameter in machine learning that specifies the number of training sampl
 
 # Bfloat16
 URL: https://dataaiwiki.com/wiki/bfloat16/
-Description: Brain Floating Point 16bit format, a truncated version of the 32bit float format designed to accelerate machine learning computations and save memory.
+Description: Brain Floating Point 16-bit format, a truncated version of the 32-bit float format designed to accelerate machine learning computations and save memory.
 
 Brain Floating Point 16-bit format, a truncated version of the 32-bit float format designed to accelerate machine learning computations and save memory.
 
@@ -469,7 +469,7 @@ Brain Floating Point 16-bit format, a truncated version of the 32-bit float form
 
 # BI (Business Intelligence)
 URL: https://dataaiwiki.com/wiki/bi-business-intelligence/
-Description: A technologydriven process for analyzing data and delivering actionable information to help executives, managers, and workers make informed business decisions.
+Description: A technology-driven process for analyzing data and delivering actionable information to help executives, managers, and workers make informed business decisions.
 
 A technology-driven process for analyzing data and delivering actionable information to help executives, managers, and workers make informed business decisions.
 
@@ -524,7 +524,7 @@ An ensemble machine learning technique that trains weak learners sequentially, w
 
 # Bootstrap Aggregating (Bagging)
 URL: https://dataaiwiki.com/wiki/bootstrap-aggregating-bagging/
-Description: An ensemble machine learning metaalgorithm designed to improve the stability and accuracy of algorithms, reducing variance and avoiding overfitting.
+Description: An ensemble machine learning meta-algorithm designed to improve the stability and accuracy of algorithms, reducing variance and avoiding overfitting.
 
 An ensemble machine learning meta-algorithm designed to improve the stability and accuracy of algorithms, reducing variance and avoiding overfitting.
 
@@ -568,7 +568,7 @@ In database systems, a catalog is a metadata repository containing definitions o
 
 # CDC (Change Data Capture)
 URL: https://dataaiwiki.com/wiki/cdc-change-data-capture/
-Description: A set of software design patterns used to determine, track, and capture changes made to databases (inserts, updates, deletes) in realtime, allowing…
+Description: A set of software design patterns used to determine, track, and capture changes made to databases (inserts, updates, deletes) in real-time, allowing…
 
 A set of software design patterns used to determine, track, and capture changes made to databases (inserts, updates, deletes) in real-time, allowing downstream systems to react instantly.
 
@@ -601,7 +601,7 @@ A supervised machine learning task where the model categorizes incoming input da
 
 # ClickHouse
 URL: https://dataaiwiki.com/wiki/clickhouse/
-Description: An opensource, highperformance columnar database management system designed for realtime analytics.
+Description: An open-source, high-performance columnar database management system designed for real-time analytics.
 
 An open-source, high-performance columnar database management system designed for real-time analytics. It uses SQL and is optimized to process petabytes of data with extremely low latency.
 
@@ -623,7 +623,7 @@ A cloud computing model that stores data on the Internet through a cloud computi
 
 # Clustering
 URL: https://dataaiwiki.com/wiki/clustering/
-Description: In databases, clustering refers to organizing table storage based on the values of one or more columns, ensuring related data is physically colocated to…
+Description: In databases, clustering refers to organizing table storage based on the values of one or more columns, ensuring related data is physically co-located to…
 
 In databases, clustering refers to organizing table storage based on the values of one or more columns, ensuring related data is physically co-located to optimize range queries.
 
@@ -634,7 +634,7 @@ In databases, clustering refers to organizing table storage based on the values 
 
 # Clustering Algorithm
 URL: https://dataaiwiki.com/wiki/clustering-algorithm/
-Description: An unsupervised learning method that groups data points into clusters based on similarity metrics, such as KMeans or DBSCAN. Part of the Data & AI Terms glossary.
+Description: An unsupervised learning method that groups data points into clusters based on similarity metrics, such as K-Means or DBSCAN.
 
 An unsupervised learning method that groups data points into clusters based on similarity metrics, such as K-Means or DBSCAN.
 
@@ -678,7 +678,7 @@ The process of reorganizing storage files in transactional data lakes or databas
 
 # Compaction Job
 URL: https://dataaiwiki.com/wiki/compaction-job/
-Description: A scheduled worker process that rewrites transactional log files to optimize query execution times. Part of the Data & AI Terms glossary.
+Description: A scheduled worker process that rewrites transactional log files to optimize query execution times.
 
 A scheduled worker process that rewrites transactional log files to optimize query execution times.
 
@@ -777,7 +777,7 @@ A statistical relationship indicating how closely two variables fluctuate togeth
 
 # Cosine Similarity
 URL: https://dataaiwiki.com/wiki/cosine-similarity/
-Description: A metric used to measure how similar two vectors are, calculated as the cosine of the angle between them in a multidimensional space.
+Description: A metric used to measure how similar two vectors are, calculated as the cosine of the angle between them in a multi-dimensional space.
 
 A metric used to measure how similar two vectors are, calculated as the cosine of the angle between them in a multi-dimensional space. It is widely used in document similarity and vector search.
 
@@ -810,7 +810,7 @@ A structural representation of a set of tasks where edges indicate execution ord
 
 # Dagster
 URL: https://dataaiwiki.com/wiki/dagster/
-Description: A modern cloudnative orchestrator for machine learning, analytics, and ETL.
+Description: A modern cloud-native orchestrator for machine learning, analytics, and ETL.
 
 A modern cloud-native orchestrator for machine learning, analytics, and ETL. It treats data assets as first-class citizens, focusing on local testability, data quality, and asset-based workflows.
 
@@ -832,7 +832,7 @@ A visual interface that displays key performance indicators (KPIs), metrics, and
 
 # Data Analyst
 URL: https://dataaiwiki.com/wiki/data-analyst/
-Description: A professional who collects, cleans, processes, and performs statistical analyses on data to help businesses make datadriven decisions and generate reports…
+Description: A professional who collects, cleans, processes, and performs statistical analyses on data to help businesses make data-driven decisions and generate reports…
 
 A professional who collects, cleans, processes, and performs statistical analyses on data to help businesses make data-driven decisions and generate reports and dashboards.
 
@@ -865,7 +865,7 @@ A detailed inventory of all data assets in an organization, using metadata to he
 
 # Data Cube
 URL: https://dataaiwiki.com/wiki/data-cube/
-Description: A multidimensional representation of data used in business intelligence for fast analysis.
+Description: A multi-dimensional representation of data used in business intelligence for fast analysis.
 
 A multi-dimensional representation of data used in business intelligence for fast analysis. It allows users to view data from different perspectives, such as time, geography, and product lines.
 
@@ -876,7 +876,7 @@ A multi-dimensional representation of data used in business intelligence for fas
 
 # Data Democratization
 URL: https://dataaiwiki.com/wiki/data-democratization/
-Description: The process of making data accessible to nontechnical users within an organization without requiring specialized assistance from IT or data engineering teams.
+Description: The process of making data accessible to non-technical users within an organization without requiring specialized assistance from IT or data engineering teams.
 
 The process of making data accessible to non-technical users within an organization without requiring specialized assistance from IT or data engineering teams.
 
@@ -942,7 +942,7 @@ The process of importing, loading, and transferring raw data from external sourc
 
 # Data Lake
 URL: https://dataaiwiki.com/wiki/data-lake/
-Description: A centralized repository that allows you to store all your structured, semistructured, and unstructured data at any scale, typically using cloud object storage.
+Description: A centralized repository that allows you to store all your structured, semi-structured, and unstructured data at any scale, typically using cloud object storage.
 
 A centralized repository that allows you to store all your structured, semi-structured, and unstructured data at any scale, typically using cloud object storage.
 
@@ -953,7 +953,7 @@ A centralized repository that allows you to store all your structured, semi-stru
 
 # Data Lakehouse
 URL: https://dataaiwiki.com/wiki/data-lakehouse/
-Description: An emerging data management paradigm that combines the lowcost object storage scalability of a data lake with the transactional capabilities, ACID…
+Description: An emerging data management paradigm that combines the low-cost object storage scalability of a data lake with the transactional capabilities, ACID…
 
 An emerging data management paradigm that combines the low-cost object storage scalability of a data lake with the transactional capabilities, ACID compliance, and SQL performance of a data warehouse.
 
@@ -986,7 +986,7 @@ A map of the data's journey, showing its origin, the transformations it underwen
 
 # Data Lineage Graph
 URL: https://dataaiwiki.com/wiki/data-lineage-graph/
-Description: A visual graph representing the transformation steps, source origins, and destinations of data columns. Part of the Data & AI Terms glossary.
+Description: A visual graph representing the transformation steps, source origins, and destinations of data columns.
 
 A visual graph representing the transformation steps, source origins, and destinations of data columns.
 
@@ -997,7 +997,7 @@ A visual graph representing the transformation steps, source origins, and destin
 
 # Data Marketplace
 URL: https://dataaiwiki.com/wiki/data-marketplace/
-Description: An online platform where organizations can publish, sell, license, or purchase standardized datasets and analytical products. Part of the Data & AI Terms glossary.
+Description: An online platform where organizations can publish, sell, license, or purchase standardized datasets and analytical products.
 
 An online platform where organizations can publish, sell, license, or purchase standardized datasets and analytical products.
 
@@ -1052,7 +1052,7 @@ A series of automated data processing steps that moves data from a source system
 
 # Data Quality
 URL: https://dataaiwiki.com/wiki/data-quality/
-Description: The measurement of data's accuracy, completeness, reliability, and relevance for business operations and analytical decisionmaking.
+Description: The measurement of data's accuracy, completeness, reliability, and relevance for business operations and analytical decision-making.
 
 The measurement of data's accuracy, completeness, reliability, and relevance for business operations and analytical decision-making.
 
@@ -1074,7 +1074,7 @@ The scheduled process of updating data warehouses, data marts, or dashboards wit
 
 # Data Retention
 URL: https://dataaiwiki.com/wiki/data-retention/
-Description: The policies and technical configurations governing how long records and tables are preserved in storage before deletion. Part of the Data & AI Terms glossary.
+Description: The policies and technical configurations governing how long records and tables are preserved in storage before deletion.
 
 The policies and technical configurations governing how long records and tables are preserved in storage before deletion.
 
@@ -1162,7 +1162,7 @@ A role responsible for maintaining the quality, metadata, and security policies 
 
 # Data Stewardship
 URL: https://dataaiwiki.com/wiki/data-stewardship/
-Description: The operational responsibility for managing data assets, ensuring data quality, metadata cataloging, and policy compliance. Part of the Data & AI Terms glossary.
+Description: The operational responsibility for managing data assets, ensuring data quality, metadata cataloging, and policy compliance.
 
 The operational responsibility for managing data assets, ensuring data quality, metadata cataloging, and policy compliance.
 
@@ -1173,7 +1173,7 @@ The operational responsibility for managing data assets, ensuring data quality, 
 
 # Data Transformation
 URL: https://dataaiwiki.com/wiki/data-transformation/
-Description: The process of cleaning, converting, and formatting raw data into structured tables optimized for reporting and analysis. Part of the Data & AI Terms glossary.
+Description: The process of cleaning, converting, and formatting raw data into structured tables optimized for reporting and analysis.
 
 The process of cleaning, converting, and formatting raw data into structured tables optimized for reporting and analysis.
 
@@ -1206,7 +1206,7 @@ A centralized, highly structured repository designed to support business intelli
 
 # Database Index
 URL: https://dataaiwiki.com/wiki/database-index/
-Description: A structured pointer table created on columns to speed up value filtering at the expense of disk space. Part of the Data & AI Terms glossary.
+Description: A structured pointer table created on columns to speed up value filtering at the expense of disk space.
 
 A structured pointer table created on columns to speed up value filtering at the expense of disk space.
 
@@ -1217,7 +1217,7 @@ A structured pointer table created on columns to speed up value filtering at the
 
 # Databricks
 URL: https://dataaiwiki.com/wiki/databricks/
-Description: A unified, cloudbased data platform built on top of Apache Spark, Delta Lake, and MLflow, designed for data engineering, collaborative data science, and…
+Description: A unified, cloud-based data platform built on top of Apache Spark, Delta Lake, and MLflow, designed for data engineering, collaborative data science, and…
 
 A unified, cloud-based data platform built on top of Apache Spark, Delta Lake, and MLflow, designed for data engineering, collaborative data science, and business analytics.
 
@@ -1228,7 +1228,7 @@ A unified, cloud-based data platform built on top of Apache Spark, Delta Lake, a
 
 # DBT (Data Build Tool)
 URL: https://dataaiwiki.com/wiki/dbt-data-build-tool/
-Description: An opensource commandline tool that enables data analysts and engineers to transform data in their warehouses using SQL select statements, supporting version…
+Description: An open-source command-line tool that enables data analysts and engineers to transform data in their warehouses using SQL select statements, supporting…
 
 An open-source command-line tool that enables data analysts and engineers to transform data in their warehouses using SQL select statements, supporting version control and testing.
 
@@ -1239,7 +1239,7 @@ An open-source command-line tool that enables data analysts and engineers to tra
 
 # Decoder
 URL: https://dataaiwiki.com/wiki/decoder/
-Description: The component of a sequencetosequence model (like Transformers) that takes encoded representations and generates output sequences token by token, widely used…
+Description: The component of a sequence-to-sequence model (like Transformers) that takes encoded representations and generates output sequences token by token, widely…
 
 The component of a sequence-to-sequence model (like Transformers) that takes encoded representations and generates output sequences token by token, widely used in autoregressive language generation.
 
@@ -1261,7 +1261,7 @@ A subset of machine learning based on artificial neural networks with multiple l
 
 # Deep Neural Network
 URL: https://dataaiwiki.com/wiki/deep-neural-network/
-Description: An artificial neural network containing multiple hidden layers between input and output layers, capable of learning highlevel features.
+Description: An artificial neural network containing multiple hidden layers between input and output layers, capable of learning high-level features.
 
 An artificial neural network containing multiple hidden layers between input and output layers, capable of learning high-level features.
 
@@ -1272,7 +1272,7 @@ An artificial neural network containing multiple hidden layers between input and
 
 # Delta Lake
 URL: https://dataaiwiki.com/wiki/delta-lake/
-Description: An opensource transactional table format created by Databricks that provides ACID transactions, scalable metadata handling, and unified streaming and batch…
+Description: An open-source transactional table format created by Databricks that provides ACID transactions, scalable metadata handling, and unified streaming and batch…
 
 An open-source transactional table format created by Databricks that provides ACID transactions, scalable metadata handling, and unified streaming and batch data processing on top of data lakes.
 
@@ -1338,7 +1338,7 @@ A database system that consists of two or more files located in different physic
 
 # Distributed Query
 URL: https://dataaiwiki.com/wiki/distributed-query/
-Description: A query executed across multiple database instances or cluster computing nodes in parallel. Part of the Data & AI Terms glossary.
+Description: A query executed across multiple database instances or cluster computing nodes in parallel.
 
 A query executed across multiple database instances or cluster computing nodes in parallel.
 
@@ -1349,7 +1349,7 @@ A query executed across multiple database instances or cluster computing nodes i
 
 # Docker
 URL: https://dataaiwiki.com/wiki/docker/
-Description: An opensource platform that automates the deployment of applications inside lightweight, portable software containers, ensuring consistency across…
+Description: An open-source platform that automates the deployment of applications inside lightweight, portable software containers, ensuring consistency across…
 
 An open-source platform that automates the deployment of applications inside lightweight, portable software containers, ensuring consistency across development, testing, and production environments.
 
@@ -1360,7 +1360,7 @@ An open-source platform that automates the deployment of applications inside lig
 
 # Document Store
 URL: https://dataaiwiki.com/wiki/document-store/
-Description: A type of NoSQL database designed to store, retrieve, and manage semistructured data as document objects, typically formatted in JSON or XML (e.g., MongoDB).
+Description: A type of NoSQL database designed to store, retrieve, and manage semi-structured data as document objects, typically formatted in JSON or XML (e.g., MongoDB).
 
 A type of NoSQL database designed to store, retrieve, and manage semi-structured data as document objects, typically formatted in JSON or XML (e.g., MongoDB).
 
@@ -1371,7 +1371,7 @@ A type of NoSQL database designed to store, retrieve, and manage semi-structured
 
 # Dot Product
 URL: https://dataaiwiki.com/wiki/dot-product/
-Description: An algebraic operation that takes two equallength sequences of numbers (usually coordinate vectors) and returns a single number.
+Description: An algebraic operation that takes two equal-length sequences of numbers (usually coordinate vectors) and returns a single number.
 
 An algebraic operation that takes two equal-length sequences of numbers (usually coordinate vectors) and returns a single number. In vector databases, it serves as a measure of vector alignment.
 
@@ -1382,7 +1382,7 @@ An algebraic operation that takes two equal-length sequences of numbers (usually
 
 # Double-bracket link
 URL: https://dataaiwiki.com/wiki/double-bracket-link/
-Description: A wikistyle link format (e.g. Target Page) used to connect pages within a wiki.
+Description: A wiki-style link format (e.g. Target Page) used to connect pages within a wiki.
 
 A wiki-style link format (e.g. [Target Page](/wiki/target-page/)) used to connect pages within a wiki. In this platform, double-bracket links are automatically normalized into site-friendly relative paths during compilation.
 
@@ -1393,7 +1393,7 @@ A wiki-style link format (e.g. [Target Page](/wiki/target-page/)) used to connec
 
 # Dremio
 URL: https://dataaiwiki.com/wiki/dremio/
-Description: Dremio is a highperformance, open and unified SQL Data Lakehouse engine.
+Description: Dremio is a high-performance, open and unified SQL Data Lakehouse engine.
 
 Dremio is a high-performance, open and unified SQL [Data Lakehouse](/wiki/data-lakehouse/) engine. It is designed to run analytical queries directly on data stored in cloud object storage (AWS S3, Azure ADLS, Google Cloud Storage) and local data lakes (MinIO, Hadoop HDFS) without requiring data to be copied or loaded into a proprietary [Data Warehouse](/wiki/data-warehouse/). By separating compute from storage and offering an in-memory execution engine based on Apache Arrow, Dremio provides sub-second query performance, a logical Semantic Layer, and open-catalog integrations that support self-service business intelligence (BI) and AI-driven data exploration.
 
@@ -1902,7 +1902,7 @@ LIMIT 10;
 
 # DuckDB
 URL: https://dataaiwiki.com/wiki/duckdb/
-Description: An opensource, embedded columnar database management system designed for analytical query processing.
+Description: An open-source, embedded columnar database management system designed for analytical query processing.
 
 An open-source, embedded columnar database management system designed for analytical query processing. Often called the 'SQLite for analytics', it runs directly inside the host process with no external server.
 
@@ -1924,7 +1924,7 @@ A data integration process where raw data is extracted from source systems, load
 
 # Embedding
 URL: https://dataaiwiki.com/wiki/embedding/
-Description: A representation of realworld objects (such as words, documents, or images) as dense numerical vectors in a continuous, highdimensional space, capturing…
+Description: A representation of real-world objects (such as words, documents, or images) as dense numerical vectors in a continuous, high-dimensional space, capturing…
 
 A representation of real-world objects (such as words, documents, or images) as dense numerical vectors in a continuous, high-dimensional space, capturing semantic meaning and relationships.
 
@@ -1935,7 +1935,7 @@ A representation of real-world objects (such as words, documents, or images) as 
 
 # Embedding Layer
 URL: https://dataaiwiki.com/wiki/embedding-layer/
-Description: A layer in a neural network that translates discrete tokens or categorical features into dense, lowdimensional vector representations.
+Description: A layer in a neural network that translates discrete tokens or categorical features into dense, low-dimensional vector representations.
 
 A layer in a neural network that translates discrete tokens or categorical features into dense, low-dimensional vector representations.
 
@@ -1957,7 +1957,7 @@ A specialized machine learning model trained to convert inputs (text, images) in
 
 # Encoder
 URL: https://dataaiwiki.com/wiki/encoder/
-Description: The component of a neural network (such as a Transformer) that processes input data and converts it into a highdimensional contextual vector representation…
+Description: The component of a neural network (such as a Transformer) that processes input data and converts it into a high-dimensional contextual vector representation…
 
 The component of a neural network (such as a Transformer) that processes input data and converts it into a high-dimensional contextual vector representation, which can then be interpreted by a decoder.
 
@@ -1968,7 +1968,7 @@ The component of a neural network (such as a Transformer) that processes input d
 
 # Entity Resolution
 URL: https://dataaiwiki.com/wiki/entity-resolution/
-Description: The process of identifying and linking records across disparate datasets that refer to the same realworld entity, such as a customer.
+Description: The process of identifying and linking records across disparate datasets that refer to the same real-world entity, such as a customer.
 
 The process of identifying and linking records across disparate datasets that refer to the same real-world entity, such as a customer.
 
@@ -1979,7 +1979,7 @@ The process of identifying and linking records across disparate datasets that re
 
 # Epoch
 URL: https://dataaiwiki.com/wiki/epoch/
-Description: One complete pass of the entire training dataset through a machine learning model's training algorithm. Part of the Data & AI Terms glossary.
+Description: One complete pass of the entire training dataset through a machine learning model's training algorithm.
 
 One complete pass of the entire training dataset through a machine learning model's training algorithm.
 
@@ -2012,7 +2012,7 @@ Data about data generated during integration processes, detailing pipeline execu
 
 # Euclidean Distance
 URL: https://dataaiwiki.com/wiki/euclidean-distance/
-Description: The straightline distance between two points in Euclidean space. In vector search, it is used to measure the dissimilarity between two vector representations.
+Description: The straight-line distance between two points in Euclidean space. In vector search, it is used to measure the dissimilarity between two vector representations.
 
 The straight-line distance between two points in Euclidean space. In vector search, it is used to measure the dissimilarity between two vector representations.
 
@@ -2023,7 +2023,7 @@ The straight-line distance between two points in Euclidean space. In vector sear
 
 # Event-driven Architecture
 URL: https://dataaiwiki.com/wiki/event-driven-architecture/
-Description: A software architecture pattern where decoupled services react to events generated by other parts of the system in realtime, often using brokers like Kafka.
+Description: A software architecture pattern where decoupled services react to events generated by other parts of the system in real-time, often using brokers like Kafka.
 
 A software architecture pattern where decoupled services react to events generated by other parts of the system in real-time, often using brokers like Kafka.
 
@@ -2045,7 +2045,7 @@ A sequence of operations generated by a database engine's query optimizer to ret
 
 # Exploratory Data Analysis (EDA)
 URL: https://dataaiwiki.com/wiki/exploratory-data-analysis-eda/
-Description: An approach to analyzing datasets by summarizing their main statistical characteristics, often using visual methods like plots. Part of the Data & AI Terms glossary.
+Description: An approach to analyzing datasets by summarizing their main statistical characteristics, often using visual methods like plots.
 
 An approach to analyzing datasets by summarizing their main statistical characteristics, often using visual methods like plots.
 
@@ -2078,7 +2078,7 @@ The central table in a dimensional model (star schema) that stores quantitative 
 
 # False Negative
 URL: https://dataaiwiki.com/wiki/false-negative/
-Description: A classification error where a model incorrectly predicts the negative class for a positive data point. Part of the Data & AI Terms glossary.
+Description: A classification error where a model incorrectly predicts the negative class for a positive data point.
 
 A classification error where a model incorrectly predicts the negative class for a positive data point.
 
@@ -2089,7 +2089,7 @@ A classification error where a model incorrectly predicts the negative class for
 
 # False Positive
 URL: https://dataaiwiki.com/wiki/false-positive/
-Description: A classification error where a model incorrectly predicts the positive class for a negative data point. Part of the Data & AI Terms glossary.
+Description: A classification error where a model incorrectly predicts the positive class for a negative data point.
 
 A classification error where a model incorrectly predicts the positive class for a negative data point.
 
@@ -2111,7 +2111,7 @@ The process of selecting, manipulating, and transforming raw data into new, info
 
 # Feature Selection
 URL: https://dataaiwiki.com/wiki/feature-selection/
-Description: The machine learning preprocessing step of selecting the most informative variables to train an algorithm. Part of the Data & AI Terms glossary.
+Description: The machine learning preprocessing step of selecting the most informative variables to train an algorithm.
 
 The machine learning preprocessing step of selecting the most informative variables to train an algorithm.
 
@@ -2133,7 +2133,7 @@ A centralized repository for storing, managing, and serving curated machine lear
 
 # Feature Vector
 URL: https://dataaiwiki.com/wiki/feature-vector/
-Description: An ndimensional vector of numerical features that represents some object, used as input for machine learning models. Part of the Data & AI Terms glossary.
+Description: An n-dimensional vector of numerical features that represents some object, used as input for machine learning models.
 
 An n-dimensional vector of numerical features that represents some object, used as input for machine learning models.
 
@@ -2144,7 +2144,7 @@ An n-dimensional vector of numerical features that represents some object, used 
 
 # Federated Query Engine
 URL: https://dataaiwiki.com/wiki/federated-query-engine/
-Description: A distributed query processor (e.g. Trino) that executes SQL queries spanning multiple external databases without copying data. Part of the Data & AI Terms glossary.
+Description: A distributed query processor (e.g. Trino) that executes SQL queries spanning multiple external databases without copying data.
 
 A distributed query processor (e.g. Trino) that executes SQL queries spanning multiple external databases without copying data.
 
@@ -2166,7 +2166,7 @@ A machine learning scenario where a model is trained or prompted to perform a ta
 
 # Fine-tuning
 URL: https://dataaiwiki.com/wiki/fine-tuning/
-Description: The process of taking a pretrained machine learning model and training it further on a smaller, taskspecific dataset to adapt its capabilities to a specialized domain.
+Description: The process of taking a pre-trained machine learning model and training it further on a smaller, task-specific dataset to adapt its capabilities to a specialized domain.
 
 The process of taking a pre-trained machine learning model and training it further on a smaller, task-specific dataset to adapt its capabilities to a specialized domain.
 
@@ -2177,7 +2177,7 @@ The process of taking a pre-trained machine learning model and training it furth
 
 # Fivetran
 URL: https://dataaiwiki.com/wiki/fivetran/
-Description: Fivetran is a commercial cloudbased data integration platform that automates the extraction and loading of data from various sources (SaaS applications…
+Description: Fivetran is a commercial cloud-based data integration platform that automates the extraction and loading of data from various sources (SaaS applications…
 
 Fivetran is a commercial cloud-based data integration platform that automates the extraction and loading of data from various sources (SaaS applications, databases, file stores) into destinations such as a [Data Warehouse](/wiki/data-warehouse/) or [Data Lakehouse](/wiki/data-lakehouse/). 
 
@@ -2198,7 +2198,7 @@ By abstracting API maintenance, schema mapping, and pipeline scaling, Fivetran a
 
 # Flink (Apache Flink)
 URL: https://dataaiwiki.com/wiki/flink-apache-flink/
-Description: An opensource, distributed stream processing framework engine designed to process continuous streams of data with low latency, high throughput, and stateful…
+Description: An open-source, distributed stream processing framework engine designed to process continuous streams of data with low latency, high throughput, and stateful…
 
 An open-source, distributed stream processing framework engine designed to process continuous streams of data with low latency, high throughput, and stateful event-driven guarantees.
 
@@ -2209,7 +2209,7 @@ An open-source, distributed stream processing framework engine designed to proce
 
 # Fully Connected Layer
 URL: https://dataaiwiki.com/wiki/fully-connected-layer/
-Description: A layer in an artificial neural network where each node is connected to every node in the preceding layer. Part of the Data & AI Terms glossary.
+Description: A layer in an artificial neural network where each node is connected to every node in the preceding layer.
 
 A layer in an artificial neural network where each node is connected to every node in the preceding layer.
 
@@ -2253,7 +2253,7 @@ A branch of artificial intelligence focused on creating new content, including t
 
 # Glowmorphism
 URL: https://dataaiwiki.com/wiki/glowmorphism/
-Description: A visual design aesthetic using bright neon highlights, glowing borders, and dropshadows over dark translucent backdrops to build futuristic, highcontrast…
+Description: A visual design aesthetic using bright neon highlights, glowing borders, and drop-shadows over dark translucent backdrops to build futuristic, high-contrast…
 
 A visual design aesthetic using bright neon highlights, glowing borders, and drop-shadows over dark translucent backdrops to build futuristic, high-contrast, premium interfaces.
 
@@ -2275,7 +2275,7 @@ A global, secure, and scalable object storage service offered by Google Cloud Pl
 
 # GPT (Generative Pre-trained Transformer)
 URL: https://dataaiwiki.com/wiki/gpt-generative-pre-trained-transformer/
-Description: A family of decoderonly transformer language models trained on massive text corpora to perform diverse text generation tasks. Part of the Data & AI Terms glossary.
+Description: A family of decoder-only transformer language models trained on massive text corpora to perform diverse text generation tasks.
 
 A family of decoder-only transformer language models trained on massive text corpora to perform diverse text generation tasks.
 
@@ -2319,7 +2319,7 @@ A NoSQL database that uses graph structures with nodes, edges, and properties to
 
 # GraphQL
 URL: https://dataaiwiki.com/wiki/graphql/
-Description: An opensource data query and manipulation language for APIs, allowing clients to request exactly the data they need and nothing more, reducing network usage.
+Description: An open-source data query and manipulation language for APIs, allowing clients to request exactly the data they need and nothing more, reducing network usage.
 
 An open-source data query and manipulation language for APIs, allowing clients to request exactly the data they need and nothing more, reducing network usage.
 
@@ -2385,7 +2385,7 @@ The traditional centralized metadata catalog for the Apache Hadoop ecosystem, st
 
 # HNSW (Hierarchical Navigable Small World)
 URL: https://dataaiwiki.com/wiki/hnsw-hierarchical-navigable-small-world/
-Description: An stateoftheart graphbased algorithm for Approximate Nearest Neighbor (ANN) search, creating multilayer graphs to achieve extremely fast vector searches in…
+Description: An state-of-the-art graph-based algorithm for Approximate Nearest Neighbor (ANN) search, creating multi-layer graphs to achieve extremely fast vector…
 
 An state-of-the-art graph-based algorithm for Approximate Nearest Neighbor (ANN) search, creating multi-layer graphs to achieve extremely fast vector searches in high dimensions.
 
@@ -2396,7 +2396,7 @@ An state-of-the-art graph-based algorithm for Approximate Nearest Neighbor (ANN)
 
 # Hot Tier
 URL: https://dataaiwiki.com/wiki/hot-tier/
-Description: A highperformance storage tier optimized for active data that is queried frequently, utilizing fast SSDs or inmemory caches. Part of the Data & AI Terms glossary.
+Description: A high-performance storage tier optimized for active data that is queried frequently, utilizing fast SSDs or in-memory caches.
 
 A high-performance storage tier optimized for active data that is queried frequently, utilizing fast SSDs or in-memory caches.
 
@@ -2407,7 +2407,7 @@ A high-performance storage tier optimized for active data that is queried freque
 
 # Hudi Timeline
 URL: https://dataaiwiki.com/wiki/hudi-timeline/
-Description: A core log structure in Apache Hudi that tracks all actions performed on a table, providing transactional guarantees and pointintime queries.
+Description: A core log structure in Apache Hudi that tracks all actions performed on a table, providing transactional guarantees and point-in-time queries.
 
 A core log structure in Apache Hudi that tracks all actions performed on a table, providing transactional guarantees and point-in-time queries.
 
@@ -2429,7 +2429,7 @@ A configuration parameter in machine learning whose value is set before the trai
 
 # IaC (Infrastructure as Code)
 URL: https://dataaiwiki.com/wiki/iac-infrastructure-as-code/
-Description: The management and provisioning of infrastructure resources (servers, databases, networks) through machinereadable configuration files rather than manual…
+Description: The management and provisioning of infrastructure resources (servers, databases, networks) through machine-readable configuration files rather than manual…
 
 The management and provisioning of infrastructure resources (servers, databases, networks) through machine-readable configuration files rather than manual interactive tools.
 
@@ -2451,7 +2451,7 @@ A framework of policies and technologies for ensuring that the right people and 
 
 # Iceberg Manifest
 URL: https://dataaiwiki.com/wiki/iceberg-manifest/
-Description: An Avroformatted file in an Apache Iceberg table that lists individual data files and documents filelevel statistical bounds. Part of the Data & AI Terms glossary.
+Description: An Avro-formatted file in an Apache Iceberg table that lists individual data files and documents file-level statistical bounds.
 
 An Avro-formatted file in an Apache Iceberg table that lists individual data files and documents file-level statistical bounds.
 
@@ -2473,7 +2473,7 @@ A standardized REST API specification for managing Apache Iceberg tables. It all
 
 # In-database Analytics
 URL: https://dataaiwiki.com/wiki/in-database-analytics/
-Description: Executing analytical algorithms and machine learning models directly inside a database engine, avoiding data export delays. Part of the Data & AI Terms glossary.
+Description: Executing analytical algorithms and machine learning models directly inside a database engine, avoiding data export delays.
 
 Executing analytical algorithms and machine learning models directly inside a database engine, avoiding data export delays.
 
@@ -2484,7 +2484,7 @@ Executing analytical algorithms and machine learning models directly inside a da
 
 # In-memory Database
 URL: https://dataaiwiki.com/wiki/in-memory-database/
-Description: A database management system that primarily relies on main memory (RAM) for data storage, resulting in ultrafast read and write operations compared to diskbound storage.
+Description: A database management system that primarily relies on main memory (RAM) for data storage, resulting in ultra-fast read and write operations compared to…
 
 A database management system that primarily relies on main memory (RAM) for data storage, resulting in ultra-fast read and write operations compared to disk-bound storage.
 
@@ -2495,7 +2495,7 @@ A database management system that primarily relies on main memory (RAM) for data
 
 # Incremental Load
 URL: https://dataaiwiki.com/wiki/incremental-load/
-Description: An ETL/ELT process that updates a target database by loading only new or changed records since the last execution, saving time. Part of the Data & AI Terms glossary.
+Description: An ETL/ELT process that updates a target database by loading only new or changed records since the last execution, saving time.
 
 An ETL/ELT process that updates a target database by loading only new or changed records since the last execution, saving time.
 
@@ -2528,7 +2528,7 @@ The process of running a trained machine learning model on new, unseen data to g
 
 # Internet of Things (IoT) Data
 URL: https://dataaiwiki.com/wiki/internet-of-things-iot-data/
-Description: Continuous streams of sensor readings, telemetry, and status updates generated by physical devices connected to the internet. Part of the Data & AI Terms glossary.
+Description: Continuous streams of sensor readings, telemetry, and status updates generated by physical devices connected to the internet.
 
 Continuous streams of sensor readings, telemetry, and status updates generated by physical devices connected to the internet.
 
@@ -2550,7 +2550,7 @@ An inverted file index algorithm used in vector databases to speed up similarity
 
 # JSON (JavaScript Object Notation)
 URL: https://dataaiwiki.com/wiki/json-javascript-object-notation/
-Description: A lightweight, textbased datainterchange format that is easy for humans to read and write and easy for machines to parse. Part of the Data & AI Terms glossary.
+Description: A lightweight, text-based data-interchange format that is easy for humans to read and write and easy for machines to parse.
 
 A lightweight, text-based data-interchange format that is easy for humans to read and write and easy for machines to parse.
 
@@ -2583,7 +2583,7 @@ A popular unsupervised clustering algorithm that partitions data into K distinct
 
 # K-Nearest Neighbors
 URL: https://dataaiwiki.com/wiki/k-nearest-neighbors/
-Description: A nonparametric machine learning algorithm used for classification and regression, where a data point is classified based on the plurality vote or average…
+Description: A non-parametric machine learning algorithm used for classification and regression, where a data point is classified based on the plurality vote or average…
 
 A non-parametric machine learning algorithm used for classification and regression, where a data point is classified based on the plurality vote or average value of its closest neighbors.
 
@@ -2594,7 +2594,7 @@ A non-parametric machine learning algorithm used for classification and regressi
 
 # Kafka (Apache Kafka)
 URL: https://dataaiwiki.com/wiki/kafka-apache-kafka/
-Description: An opensource distributed event streaming platform used by thousands of companies for highperformance data pipelines, streaming analytics, and system integration.
+Description: An open-source distributed event streaming platform used by thousands of companies for high-performance data pipelines, streaming analytics, and system integration.
 
 An open-source distributed event streaming platform used by thousands of companies for high-performance data pipelines, streaming analytics, and system integration.
 
@@ -2605,7 +2605,7 @@ An open-source distributed event streaming platform used by thousands of compani
 
 # Kafka Connect
 URL: https://dataaiwiki.com/wiki/kafka-connect/
-Description: A component of Apache Kafka designed to simplify integration between Kafka topics and external data sources or databases. Part of the Data & AI Terms glossary.
+Description: A component of Apache Kafka designed to simplify integration between Kafka topics and external data sources or databases.
 
 A component of Apache Kafka designed to simplify integration between Kafka topics and external data sources or databases.
 
@@ -2627,7 +2627,7 @@ A simple NoSQL database that uses an associative array (map) as its fundamental 
 
 # KPI (Key Performance Indicator)
 URL: https://dataaiwiki.com/wiki/kpi-key-performance-indicator/
-Description: A quantifiable measure used to evaluate the success of an organization, employee, or project in meeting objectives. Part of the Data & AI Terms glossary.
+Description: A quantifiable measure used to evaluate the success of an organization, employee, or project in meeting objectives.
 
 A quantifiable measure used to evaluate the success of an organization, employee, or project in meeting objectives.
 
@@ -2638,7 +2638,7 @@ A quantifiable measure used to evaluate the success of an organization, employee
 
 # Kubernetes
 URL: https://dataaiwiki.com/wiki/kubernetes/
-Description: An opensource container orchestration system for automating software deployment, scaling, and management of containerized applications across clusters of host machines.
+Description: An open-source container orchestration system for automating software deployment, scaling, and management of containerized applications across clusters of host machines.
 
 An open-source container orchestration system for automating software deployment, scaling, and management of containerized applications across clusters of host machines.
 
@@ -2660,7 +2660,7 @@ The metadata catalog interface that tracks transactional table namespaces and ph
 
 # Lakehouse Storage
 URL: https://dataaiwiki.com/wiki/lakehouse-storage/
-Description: The open cloud object storage layer that houses transactional parquet or orc tables managed by formats like Iceberg. Part of the Data & AI Terms glossary.
+Description: The open cloud object storage layer that houses transactional parquet or orc tables managed by formats like Iceberg.
 
 The open cloud object storage layer that houses transactional parquet or orc tables managed by formats like Iceberg.
 
@@ -2671,7 +2671,7 @@ The open cloud object storage layer that houses transactional parquet or orc tab
 
 # LangChain
 URL: https://dataaiwiki.com/wiki/langchain/
-Description: An opensource software development framework designed to simplify the creation of applications using large language models, providing integrations, prompt…
+Description: An open-source software development framework designed to simplify the creation of applications using large language models, providing integrations, prompt…
 
 An open-source software development framework designed to simplify the creation of applications using large language models, providing integrations, prompt templates, and chains.
 
@@ -2715,7 +2715,7 @@ A basic supervised learning algorithm that models the relationship between depen
 
 # Llama
 URL: https://dataaiwiki.com/wiki/llama/
-Description: A family of opensource foundational large language models developed by Meta, widely used for local LLM deployment and custom finetuning.
+Description: A family of open-source foundational large language models developed by Meta, widely used for local LLM deployment and custom fine-tuning.
 
 A family of open-source foundational large language models developed by Meta, widely used for local LLM deployment and custom fine-tuning.
 
@@ -2726,7 +2726,7 @@ A family of open-source foundational large language models developed by Meta, wi
 
 # LlamaIndex
 URL: https://dataaiwiki.com/wiki/llamaindex/
-Description: A data framework for connecting private custom data sources to large language models, facilitating retrievalaugmented generation (RAG) and semantic indexing.
+Description: A data framework for connecting private custom data sources to large language models, facilitating retrieval-augmented generation (RAG) and semantic indexing.
 
 A data framework for connecting private custom data sources to large language models, facilitating retrieval-augmented generation (RAG) and semantic indexing.
 
@@ -2737,7 +2737,7 @@ A data framework for connecting private custom data sources to large language mo
 
 # LLM Prompting
 URL: https://dataaiwiki.com/wiki/llm-prompting/
-Description: The practice of submitting contextrich instruction templates to Large Language Models to shape output generation. Part of the Data & AI Terms glossary.
+Description: The practice of submitting context-rich instruction templates to Large Language Models to shape output generation.
 
 The practice of submitting context-rich instruction templates to Large Language Models to shape output generation.
 
@@ -2759,7 +2759,7 @@ A networking device or software that distributes incoming network traffic across
 
 # Logistic Regression
 URL: https://dataaiwiki.com/wiki/logistic-regression/
-Description: A classification algorithm used to predict the probability of a binary outcome based on input features. Part of the Data & AI Terms glossary.
+Description: A classification algorithm used to predict the probability of a binary outcome based on input features.
 
 A classification algorithm used to predict the probability of a binary outcome based on input features.
 
@@ -2792,7 +2792,7 @@ A branch of artificial intelligence focused on building systems that learn from 
 
 # Manifest File
 URL: https://dataaiwiki.com/wiki/manifest-file/
-Description: In Apache Iceberg, a manifest file is an Avro file that tracks a list of data files or delete files, along with partitionlevel metrics, enabling efficient…
+Description: In Apache Iceberg, a manifest file is an Avro file that tracks a list of data files or delete files, along with partition-level metrics, enabling efficient…
 
 In Apache Iceberg, a manifest file is an Avro file that tracks a list of data files or delete files, along with partition-level metrics, enabling efficient file pruning during query planning.
 
@@ -2814,7 +2814,7 @@ In Apache Iceberg, a manifest list is an Avro file that tracks manifest files, d
 
 # Materialized View
 URL: https://dataaiwiki.com/wiki/materialized-view/
-Description: A database object containing the precomputed results of a query, stored physically on disk to avoid reevaluating complex queries, with various strategies for…
+Description: A database object containing the precomputed results of a query, stored physically on disk to avoid re-evaluating complex queries, with various strategies…
 
 A database object containing the precomputed results of a query, stored physically on disk to avoid re-evaluating complex queries, with various strategies for refresh synchronization.
 
@@ -2825,7 +2825,7 @@ A database object containing the precomputed results of a query, stored physical
 
 # Materialized View Refresh
 URL: https://dataaiwiki.com/wiki/materialized-view-refresh/
-Description: The technique used to synchronize precalculated views with incoming transaction write updates. Part of the Data & AI Terms glossary.
+Description: The technique used to synchronize precalculated views with incoming transaction write updates.
 
 The technique used to synchronize precalculated views with incoming transaction write updates.
 
@@ -2905,7 +2905,7 @@ Welcome to the Open Source Tools section of the Data & AI Wiki. Below is an inde
 
 # Project Nessie
 URL: https://dataaiwiki.com/wiki/project-nessie/
-Description: Project Nessie is an opensource, transactional Data Catalog designed primarily to manage tables in an open Data Lakehouse (supporting formats like Apache…
+Description: Project Nessie is an open-source, transactional Data Catalog designed primarily to manage tables in an open Data Lakehouse (supporting formats like Apache…
 
 Project Nessie is an open-source, transactional [Data Catalog](/wiki/data-catalog/) designed primarily to manage tables in an open [Data Lakehouse](/wiki/data-lakehouse/) (supporting formats like [Apache Iceberg](/wiki/apache-iceberg/) and [Delta Lake](/wiki/delta-lake/)). 
 
@@ -2925,9 +2925,37 @@ By providing multi-table transaction guarantees across entire namespaces, Nessie
 
 ---
 
+# Shawn Gordon
+URL: https://dataaiwiki.com/wiki/shawn-gordon/
+Description: Shawn Gordon is a well-known personality in the data and AI space.
+
+Shawn Gordon is a well-known personality in the data and AI space. In addition to being a proficient, Grammy-nominated musician, he currently serves as a **Senior Developer Advocate** at [Collate](https://www.getcollate.io/), the creators of the open-source project [OpenMetadata](https://open-metadata.org/). He is well known for his entertaining educational content across a wide variety of topics and media. 
+
+---
+
+## Career & Background
+
+Shawn's background includes decades in IT as a customer, vendor, and entrepreneur. In addition, he has worked as a DJ, a record label executive, and an advisor to various companies, from gaming to blockchain.
+
+- **Developer Advocacy & Relations**: Spearheading Developer Advocacy and Technical evangelism at companies such as Upsolver, Ahana, Tabular, LanceDB, WarpStream, DeltaStream, and Collate. Creating videos, interactive demos, blogs, and interviews.
+- **Commercial Software**: Prior to his advocacy work, Shawn founded The Kompany.com, a productivity and developer tool company with over 60 products across five platforms. 
+- **Music Industry**: Computers were supposed to be the stopgap till stardom, but it didn't work out that way. However, that didn't stop Shawn from working as a DJ and starting a record label that released over 130 albums with worldwide distribution.
+- **Writer**: A frequent writer for [HackerNoon](https://hackernoon.com/u/progrockrec), Shawn has over 430 published articles across many online and print publications.
+
+---
+
+## External Resources
+
+- **Articles & Blogs**: [theKompany.com](https://www.thekompany.com/general-articles-2008-present/)
+- **GitHub**: [smga3000](https://github.com/smga3000)
+- **YouTube Channel**: [@ShawnGordon](https://www.youtube.com/@ShawnGordon/playlists)
+- **LinkedIn Profile**: [LinkedIn](https://www.linkedin.com/in/shawn-gordon-37b9916/)
+
+---
+
 # Snowflake
 URL: https://dataaiwiki.com/wiki/snowflake/
-Description: Snowflake is a fully managed, cloudnative data platform that functions primarily as an enterprise Data Warehouse.
+Description: Snowflake is a fully managed, cloud-native data platform that functions primarily as an enterprise Data Warehouse.
 
 Snowflake is a fully managed, cloud-native data platform that functions primarily as an enterprise [Data Warehouse](/wiki/data-warehouse/). It is designed to run on top of major cloud infrastructures (AWS, GCP, Azure) and separates storage, compute, and service management layers.
 
@@ -2948,7 +2976,7 @@ Snowflake supports standard SQL and integrates with diverse data integration, bu
 
 # Trino
 URL: https://dataaiwiki.com/wiki/trino/
-Description: Trino is an opensource, distributed SQL query engine designed for lowlatency adhoc querying and analytics over largescale datasets.
+Description: Trino is an open-source, distributed SQL query engine designed for low-latency ad-hoc querying and analytics over large-scale datasets.
 
 Trino is an open-source, distributed SQL query engine designed for low-latency ad-hoc querying and analytics over large-scale datasets. Formerly known as PrestoSQL, Trino is built on a Massively Parallel Processing (MPP) architecture.
 

@@ -5,6 +5,7 @@ const wiki = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/wiki' }),
   schema: z.object({
     title: z.string(),
+    description: z.string().optional(),
     sourceFile: z.string().optional(),
     slug: z.string().optional(),
     updatedFromWiki: z.boolean().optional(),

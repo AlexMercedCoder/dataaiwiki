@@ -95,6 +95,64 @@ function resolveTargetSlug(target) {
   return targetSlug;
 }
 
+// Build a meta description from the first real prose paragraph of the body.
+// Skips headings, lists, tables, code fences, blockquotes, rules, and
+// italic-only footer lines. Strips inline markdown only, so hyphenated words
+// such as "open-source" and snake_case identifiers survive intact.
+function stripInlineMarkdown(text) {
+  return text
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, '') // images
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1') // links, keep labels
+    .replace(/`([^`]*)`/g, '$1') // inline code
+    .replace(/(\*\*|__)(.+?)\1/g, '$2') // bold
+    .replace(/(^|[\s(])[*_]([^*_\s][^*_]*?)[*_](?=[\s).,;:!?]|$)/g, '$1$2') // italics
+    .replace(/<[^>]+>/g, '') // inline HTML
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function firstProseParagraph(content) {
+  const blocks = content.split(/\n\s*\n/);
+  let inFence = false;
+  for (const raw of blocks) {
+    const block = raw.trim();
+    const fenceCount = (block.match(/^```/gm) || []).length;
+    if (inFence) {
+      if (fenceCount % 2 === 1) inFence = false;
+      continue;
+    }
+    if (fenceCount % 2 === 1) { inFence = true; continue; }
+    if (!block || fenceCount) continue;
+    if (/^(#{1,6}\s|[-*+]\s|\d+[.)]\s|>|\||-{3,}|\*{3,}|_{3,}|<)/.test(block)) continue;
+    if (/^[*_][^*_].*[*_]$/.test(block)) continue; // italic-only note
+    const text = stripInlineMarkdown(block);
+    if (text.length >= 20) return text;
+  }
+  return '';
+}
+
+// Pages whose body is only a list of links get a written description.
+const coreDescriptions = {
+  individuals: "Profiles of people who work in data and AI, from Alex Merced's Data & AI Wiki.",
+};
+
+function describeFromBody(content, title) {
+  const plainText = firstProseParagraph(content);
+  if (!plainText) return `${title}: a short definition from Alex Merced's Data & AI Wiki.`;
+  if (plainText.length <= 165) return plainText;
+  // Prefer whole sentences within ~165 chars; never cut mid-word.
+  const sentences = plainText.split(/(?<=[.!?])\s+/);
+  let out = sentences[0];
+  for (const s of sentences.slice(1)) {
+    if ((out + ' ' + s).length <= 165) out += ' ' + s;
+    else break;
+  }
+  if (out.length > 170) {
+    out = out.slice(0, 158).replace(/\s+\S*$/, '').replace(/[,;:]$/, '') + '…';
+  }
+  return out;
+}
+
 function processWiki() {
   if (!fs.existsSync(rawDir)) {
     console.error(`Error: Raw wiki directory not found at ${rawDir}. Run 'npm run sync:wiki' first.`);
@@ -199,31 +257,7 @@ function processWiki() {
       return match;
     });
 
-    let description = parsed.data.description;
-    if (!description) {
-      // Clean markdown syntax from content to extract description
-      let plainText = content
-        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1') // remove markdown links, keeping labels
-        .replace(/[#*`_\-+>]/g, '') // remove markdown symbols
-        .replace(/\s+/g, ' ') // collapse multiple spaces
-        .trim();
-      if (plainText.length <= 165) {
-        description = plainText;
-      } else {
-        // Prefer whole sentences within ~165 chars; never cut mid-word.
-        const sentences = plainText.split(/(?<=[.!?])\s+/);
-        let out = sentences[0];
-        for (const s of sentences.slice(1)) {
-          if ((out + ' ' + s).length <= 165) out += ' ' + s;
-          else break;
-        }
-        if (out.length > 170) {
-          // Single long sentence: trim at the last word boundary before ~158 chars.
-          out = out.slice(0, 158).replace(/\s+\S*$/, '').replace(/[,;:]$/, '') + '…';
-        }
-        description = out;
-      }
-    }
+    let description = parsed.data.description || coreDescriptions[slug] || describeFromBody(content, title);
 
     const frontmatter = {
       ...parsed.data,
@@ -259,7 +293,7 @@ function processWiki() {
 
   // Write llms.txt
   let llmsTxt = `# Data & AI Wiki\n\n`;
-  llmsTxt += `> Mirror website for AlexMercedCoder's Data and AI Wiki. A collection of articles on lakehouses, semantic layers, concepts, and platforms.\n\n`;
+  llmsTxt += `> Alex Merced's short-definition wiki for AI and data terms: agents, LLMs, retrieval, semantic layers, lakehouses, and the platforms around them. Each page gives a brief definition of one term. Long-form guides live on DataEngnr (https://dataengnr.com).\n\n`;
   llmsTxt += `## Core Pages\n\n`;
   llmsTxt += `- [Home](https://dataaiwiki.com/wiki/) - Main entry point and directory list.\n`;
   llmsTxt += `- [Terms](https://dataaiwiki.com/wiki/terms/) - Complete list of Data & AI terms.\n`;
