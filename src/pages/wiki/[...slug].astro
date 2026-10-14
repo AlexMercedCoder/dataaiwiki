@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import WikiLayout from '../../layouts/WikiLayout.astro';
 import { practicalExamples } from '../../data/practical-examples';
 import { deepTermSlugs } from '../../data/deep-term-slugs';
+import { hubGlossary } from '../../data/hub-glossary';
 
 export async function getStaticPaths() {
   const entries = await getCollection('wiki');
@@ -19,6 +20,7 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 const practical = practicalExamples[entry.id];
+const hub = hubGlossary[entry.id];
 
 // Listing pages carry the DefinedTermSet; every other page is one DefinedTerm.
 const listingIds = new Set(['home', 'terms']);
@@ -39,5 +41,6 @@ const terms = entry.id === 'terms'
     {practical && <><h2>Example</h2><p>{practical.example}</p></>}
     <h2>Go deeper</h2>
     <p>{deepTermSlugs.includes(entry.id) ? <a href={`https://dataengnr.com/terms/${entry.id}/`}>Read the in-depth DataEngnr guide →</a> : <a href="https://datalakehouse.help/">Browse hands-on data and AI guides →</a>}</p>
+    {hub && <p>See also on the Data Lakehouse Hub glossary: <a href={hub.url}>{hub.title}</a> (the same term explained from the lakehouse side, with its own related terms and further reading)</p>}
   </aside>}
 </WikiLayout>
