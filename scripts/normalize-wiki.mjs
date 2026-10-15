@@ -132,6 +132,15 @@ function firstProseParagraph(content) {
   return '';
 }
 
+// Hand-written meta descriptions (140 to 160 characters), keyed by slug.
+// These take precedence over wiki frontmatter and the first-paragraph fallback,
+// because the wiki's opening paragraphs are often too short or too long for a
+// search snippet. Maintained in the site repo, not in the wiki.
+const DESCRIPTIONS_FILE = path.resolve('./src/data/wiki-descriptions.json');
+const descriptionOverrides = fs.existsSync(DESCRIPTIONS_FILE)
+  ? JSON.parse(fs.readFileSync(DESCRIPTIONS_FILE, 'utf-8'))
+  : {};
+
 // Pages whose body is only a list of links get a written description.
 const coreDescriptions = {
   individuals: "Profiles of people who work in data and AI, from Alex Merced's Data & AI Wiki.",
@@ -226,7 +235,10 @@ function processWiki() {
     }
 
     // Convert double-bracket wiki links: [[Page Name]] or [[Page Name|Custom Label]]
-    content = content.replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (match, target, label) => {
+    // Inline code spans are left alone, so a page can show the [[...]] syntax
+    // itself (e.g. the Double-bracket link entry) without it becoming a link.
+    content = content.replace(/(`[^`\n]*`)|\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (match, code, target, label) => {
+      if (code) return code;
       const cleanTarget = target.trim();
       const cleanLabel = label ? label.trim() : cleanTarget;
       const targetSlug = resolveTargetSlug(cleanTarget);
@@ -264,7 +276,7 @@ function processWiki() {
       return match;
     });
 
-    let description = parsed.data.description || coreDescriptions[slug] || describeFromBody(content, title);
+    let description = descriptionOverrides[slug] || parsed.data.description || coreDescriptions[slug] || describeFromBody(content, title);
 
     const frontmatter = {
       ...parsed.data,

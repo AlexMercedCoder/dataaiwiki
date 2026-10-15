@@ -75,9 +75,11 @@ const schema = kind === 'term'
     }
   : isArticle
   ? {
+      // Wiki section and listing pages (the /wiki/ index, Terms, Individuals,
+      // Vendor Platforms) are collections of entries, not dated articles.
       "@context": "https://schema.org",
-      "@type": "TechArticle",
-      "headline": fullTitle,
+      "@type": "CollectionPage",
+      "name": fullTitle,
       "description": description,
       "url": canonicalURL.toString(),
       "image": imageUrl.toString(),
